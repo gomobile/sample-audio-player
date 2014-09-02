@@ -9,7 +9,7 @@
     	"iconUrl":"",
 	"highlights":["App Designer", "App Framework"],
     	"keywords":["App Designer", "App Framework"],
-	"visible": "false",
+	"visible": "true",
 	"apppreview":"true",
 	"type":"appdesigner",
 	"appname":"demo.audioapp",
