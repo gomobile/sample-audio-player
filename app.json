@@ -1,5 +1,5 @@
 {
-	"reponame":"sample-audio-player-app",
+	"reponame":"sample-audio-player",
 	"title":"Audio Player App",
 	"abbr":"AudioPlayer App",
 	"tooltip":"[App Designer Ready] This sample application demonstrates how to play audio files local to the project, online podcast, online .m3u playlist and files on device. This sample has AdMob Banner and Interstitial ads intergrated using the cordova-plugin-admob by floatinghotspot.",
