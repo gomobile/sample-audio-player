@@ -1,52 +1,81 @@
+/*jslint devel:true, browser:true, unparam:true, white:true */
+/*global admobAd */
+
+/* jshint strict: true, -W097 */
+/* global admobAd, onDocLoad, message */
+
+
 //AdMob Keys
-var admob_ios_key = 'MY_iOS_ADMOB_Ad_unit_ID';
-//var admob_android_key = 'ca-app-pub-2634431076411342/6548504911';//Intersitial Ads
-var admob_android_key = 'ca-app-pub-2634431076411342/8664366510';//Banner Ads 
+/*
+    Visit to https://apps.admob.com/ to obtain Ad Unit IDs for displaying Interstitial and Banner ads 
+    Create your App entry and ad unit under the Monetize panel
+*/
+var admob_platform_interstitial_key = 'ADD_YOUR_AD-UNIT-ID_HERE';//Interstitial Ads
+var admob_platform_banner_key = 'ADD_YOUR_AD-UNIT-ID_HERE';//Banner Ads 
 
+/*
+    Function: onReceiveFail
+    Parameter: message - calback message
+    Description: callback fail method
+*/
+function onReceiveFail(message) {
+    'use strict';
+    alert("load fail: " + message.type + "  " + message.data);
+}
+
+/*
+    Function: showInterstitial
+    Parameter: none
+    Description: showInterstitial Ad; executed after init and cache Interstitial
+*/
+function showInterstitial() {
+    'use strict';
+    admobAd.isInterstitialReady(function (isReady) {
+        if (isReady) {
+            admobAd.showInterstitial();
+        }
+    });
+}
+
+/*
+Function: onInterstitialReceive
+Parameter: message - callback message
+Description: callback success method
+*/
+function onInterstitialReceive(message) {
+    'use strict';
+    alert("onMInterstitialReceive ,you can show it now");
+    showInterstitial();
+}
+
+/*
+    Function: validateAdMobKey()
+    Parameter: interstitialkey, bannerkey
+    Description: Check if the used keys are not the default text
+*/
+function validateAdMobKey(interstitial_key, banner_key) {
+    'use strict';
+    if ((interstitial_key === 'ADD_YOUR_AD-UNIT-ID_HERE') || (banner_key === 'ADD_YOUR_AD-UNIT-ID_HERE')) {
+        alert("Enter valid Google AdMob* provided Ad Unit IDs in the main.js file!!!");
+    }
+}
+
+/*
+    Function: onDocLoad()
+    Parameter: none
+    Description: show the Banner Ad [initBanner(...) then showBanner(...)] or interstitial Ad [initInterstitial(...) then cacheInterstitial() then showInterstitial()]; 
+*/
 function onDocLoad() {
-    if(( /(ipad|iphone|ipod|android)/i.test(navigator.userAgent) )) {
-        document.addEventListener('deviceready', initApp, false);
-    } else {
-        initApp();
-    }
-}
-
-function initApp() {
-    initAd();
-
-    // display a banner Ad at startup
-    window.plugins.AdMob.createBannerView();
-    // display an interstitial Ad at startup
-    //window.plugins.AdMob.createInterstitialView();
-}
-
-function platformCheck(){
-    if(device.platform == "iOS"){
-        //If iOS device, remove upage CSS class from the mainpage to enable scrolling horizontal
-        document.getElementById('mainpage').className="panel";
-    }
-    else if (device.platform.substr(0, 3) == "Win"){ //Windows phone
-        //If Windows Phone Device, set the height and width to the device eight and width
-        document.getElementById("webpage").style.height = window.innerHeight+"px";
-    }
-}
-
-
-function initAd(){
-    platformCheck();
+    'use strict';
+    validateAdMobKey(admob_platform_interstitial_key, admob_platform_interstitial_key);
+    //show Banner ad
+    admobAd.initBanner(admob_platform_banner_key, admobAd.AD_SIZE.BANNER.width, admobAd.AD_SIZE.BANNER.height);//create admob banner
+    admobAd.showBanner(admobAd.AD_POSITION.BOTTOM_CENTER);
     
-    if ( window.plugins && window.plugins.AdMob ) {
-        var admobid = (( /(android)/i.test(navigator.userAgent) ) ? admob_android_key : admob_ios_key);
-        window.plugins.AdMob.setOptions( {
-            publisherId: admobid,
-            bannerAtTop: false, // set to true, to put banner at top
-            overlap: false, // set to true, to allow banner overlap webview
-            offsetTopBar: false, // set to true to avoid ios7 status bar overlap
-            isTesting: true, // receiving test ad
-            autoShow: true // auto show interstitial ad when loaded
-        });
-
-    } else {
-        alert( 'admob plugin not ready' );
-    }
+    //show Interstitial ad
+    admobAd.initInterstitial(admob_platform_interstitial_key);//create Interstitial ad
+    document.addEventListener(admobAd.AdEvent.onInterstitialReceive, onInterstitialReceive, false);
+    document.addEventListener(admobAd.AdEvent.onInterstitialFailedReceive, onReceiveFail, false);
+    
+    admobAd.cacheInterstitial();// load admob Interstitial
 }

@@ -6,7 +6,7 @@ Intel(R) XDK
 -------------------------------------------
 This sample is part of the Intel(R) XDK. 
 Download the Intel(R) XDK at http://software.intel.com/en-us/html5. To see the technical details of the sample, 
-please visit the sample article page at TBA.
+please visit the sample article page at https://software.intel.com/en-us/html5/articles/html5-hybrid-apps-with-admob-cordova-plugin.
 
 
 Important App Files

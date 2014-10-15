@@ -225,14 +225,14 @@
         "paramvals": {}
       },
       {
-        "id": "com.rjfun.cordova.plugin.admob",
+        "id": "com.google.admob",
         "version": "",
         "selectedState": "Included",
         "data": {},
         "paramvals": {},
         "custom": "true",
-        "name": "cordova-plugin-admob",
-        "origin": "com.rjfun.cordova.plugin.admob",
+        "name": "Google Admob Plugin",
+        "origin": "com.google.admob",
         "originType": "cordova.io"
       }
     ],
