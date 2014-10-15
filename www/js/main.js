@@ -1,8 +1,8 @@
-/* jshint strict: true, -W097 */
-/* global admobAd, alert */
+/*jslint devel:true, browser:true, unparam:true, white:true */
+/*global admobAd */
 
-/*jslint devel:true  */
-/*global admobAd, alert:false */
+/* jshint strict: true, -W097 */
+/* global admobAd, onDocLoad, message */
 
 
 //AdMob Keys
