@@ -1,12 +1,14 @@
-Audio Player App
-============================
-The Audio Player App demonstrates how to play audio files local to the project, online podcast, online .m3u playlist and files on device.
+sample-geolocation
+==================
+This sample gets the user's location using the device's geolocation services and then 
+plots their position every five seconds on a Google Map.  
+It takes advantage of the JavaScript bridge library to access the native features of the device.
 
 Intel(R) XDK 
 -------------------------------------------
-This sample is part of the Intel(R) XDK. 
-Download the Intel(R) XDK at http://software.intel.com/en-us/html5. To see the technical details of the sample, 
-please visit the sample article page at https://software.intel.com/en-us/html5/articles/html5-hybrid-apps-with-admob-cordova-plugin.
+This sample is part of the Intel(R) XDK. Please sign up at http://software.intel.com/en-us/html5. 
+To see the technical detail of the sample, please visit the sample article page at 
+http://software.intel.com/en-us/articles/intel-xdk-geolocation-sample .
 
 
 Important App Files
@@ -15,14 +17,12 @@ Important App Files
 * icon.png
 * screenshot.png
 * app.json
-* README.md
 * js/*
-* css/*
-* appframework/*
+* images/*
 
 License Information Follows
 ---------------------------
-Copyright (c) 2014, Intel Corporation. All rights reserved.
+Copyright (c) 2012, Intel Corporation. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -49,7 +49,12 @@ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
 LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT 
 OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-App Framework
---------------------------
-* source:  http://app-framework-software.intel.com/
-* license:  https://github.com/01org/appframework/blob/master/license.txt
+
+IMAGES
+-----------------------------------------------------------------------------
+
+all images are created by Intel Corp. 
+they are licensed under the Creative Commons Attribution 3.0 license 
+http://creativecommons.org/licenses/by/3.0/us/
+
+
