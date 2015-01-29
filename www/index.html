@@ -1,49 +1,107 @@
-<!--
-Copyright (c) 2011, 2012, 2013 Intel Corporation
-
- Permission is hereby granted, free of charge, to any person
- obtaining a copy of this software and associated documentation
- files (the "Software"), to deal in the Software without
- restriction, including without limitation the rights to use,
- copy, modify, merge, publish, distribute, sublicense, and/or sell
- copies of the Software, and to permit persons to whom the
- Software is furnished to do so, subject to the following
- conditions:
-
- The above copyright notice and this permission notice shall be
- included in all copies or substantial portions of the Software.
-
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
- EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
- OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
- NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
- HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
- WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
- OTHER DEALINGS IN THE SOFTWARE.
--->
-
-
+<!DOCTYPE html>
+<!--HTML5 doctype-->
 <html>
-<head>
 
-<title>Geolocation</title>
-<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">    
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-<script src='intelxdk.js'></script>
-  <script src='cordova.js'></script> 
-  <script src='xhr.js'></script>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+		<title>Your New Application</title>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+		<style type="text/css">
+			/* Prevent copy paste for all elements except text fields */
+			*  { -webkit-user-select:none; -webkit-tap-highlight-color:rgba(255, 255, 255, 0); }
+			input, textarea  { -webkit-user-select:text; }
+		</style>
+		<script src="intelxdk.js"></script>
+		<script src="cordova.js"></script>
+		<script src="xhr.js"></script>
+        <script src="js/main.js"></script>
+	</head>
 
-<script type="text/javascript" src="js/main.js"></script> 
+	<body id="afui" onload="onDocLoad()" class="background">
 
-<style type="text/css">
-* { -webkit-user-select:none; -webkit-tap-highlight-color:rgba(255, 255, 255, 0); -ms-touch-action:none;} 
-</style>
+		<!-- content goes here-->
+		<div class="uwrap" id="content">
+			<div class="upage panel background-color" id="mainpage" data-header="none" data-footer="none">
+				<div class="upage-outer">
+					<div class="upage-content" id="mainsub">
 
+						<div class="grid grid-pad urow uib_row_1 row-height-1" data-uib="layout/row" data-ver="0">
+							<div class="col uib_col_1 col-0_12-12" data-uib="layout/col" data-ver="0">
+								<div class="widget-container content-area vertical-col">
 
-</head>
-<body style="font-family:Arial;font-size:18pt;border:0;margin:0;padding:0;">
-<div id="map_canvas" style="width:100%; text-align:center;"><h1>Determining Your Location</h1></div>
-</body>
+									<div class="widget uib_w_1 d-margins text-style" data-uib="media/text" data-ver="0">
+										<div class="widget-container left-receptacle"></div>
+										<div class="widget-container right-receptacle"></div>
+										<div>
+											<p>Local Music</p>
+										</div>
+									</div>
+									<div class="widget uib_w_3 d-margins contentname-text" data-uib="media/text" data-ver="0">
+										<div class="widget-container left-receptacle"></div>
+										<div class="widget-container right-receptacle"></div>
+										<div>
+											<p>Calm Ocean Breeze</p>
+										</div>
+									</div>
+									<audio class="widget uib_w_2 d-margins" data-uib="media/audio" data-ver="0" controls="controls">
+										<source src="sounds/calm-ocean-breeze.wav" type="audio/wav">
+
+									</audio>
+									<div class="widget uib_w_5 d-margins contentname-text" data-uib="media/text" data-ver="0">
+										<div class="widget-container left-receptacle"></div>
+										<div class="widget-container right-receptacle"></div>
+										<div>
+											<p>Musical Compilation</p>
+										</div>
+									</div>
+									<audio class="widget uib_w_4 d-margins" data-uib="media/audio" data-ver="0" controls="controls">
+										<source src="sounds/xylophones-bass-drums-and-snare-drums-ambience.wav" type="audio/wav">
+									</audio>
+									<div class="widget uib_w_6 d-margins text-style" data-uib="media/text" data-ver="0">
+										<div class="widget-container left-receptacle"></div>
+										<div class="widget-container right-receptacle"></div>
+										<div>
+											<p>Streaming ONLINE Audio</p>
+										</div>
+									</div>
+									<div class="widget uib_w_7 d-margins contentname-text" data-uib="media/text" data-ver="0">
+										<div class="widget-container left-receptacle"></div>
+										<div class="widget-container right-receptacle"></div>
+										<div>
+											<p>IGN Nintendo Voice Chat Podcast</p>
+										</div>
+									</div>
+									<audio class="widget uib_w_8 d-margins" data-uib="media/audio" data-ver="0" controls="controls">
+										<source src="http://traffic.libsyn.com/ignwii/Nintendo_Voice_Chat__Show_and_Tell_With_Our_Favorite_Nintendo_Treasures.mp3" type="audio/mpeg">
+									</audio>
+									<div class="widget uib_w_9 d-margins contentname-text" data-uib="media/text" data-ver="0">
+										<div class="widget-container left-receptacle"></div>
+										<div class="widget-container right-receptacle"></div>
+										<div>
+											<p>Archive.org How To Be More Aware Of The World Around You M3U Playlist</p>
+										</div>
+									</div>
+									<audio class="widget uib_w_10 d-margins" data-uib="media/audio" data-ver="0" controls="controls">
+										<source src="https://archive.org/download/Item395HowToBeMoreAwareOfTheWorldAroundYou/download%2FItem395HowToBeMoreAwareOfTheWorldAroundYou%2FItem395HowToBeMoreAwareOfTheWorldAroundYou_vbr.m3u" type="audio/mpegURL">
+											<source src="my/video/src.mp4" type="audio/ogg">
+									</audio><span class="uib_shim"></span>
+								</div>
+							</div>
+							<span class="uib_shim"></span>
+						</div>
+					</div>
+					<!-- /upage-content -->
+
+				</div>
+				<!-- /upage-outer -->
+
+			</div>
+			<!-- /upage -->
+
+		</div>
+		<!-- /uwrap -->
+	</body>
+
 </html>
