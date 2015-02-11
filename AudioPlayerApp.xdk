@@ -3,13 +3,11 @@
     "projectSettingsVersion": "1.2",
     "creationData": {
       "type": "App Designer",
-      "createDefaultBuildConfigs": true,
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
-      "src": "appDesigner",
-      "sourceDirectory": "www",
-			"projectGuid": "00000000-0000-0000-0000-000000000000",
-      "lastModifiedDate": 1407304566912,
-      "creationDate": 1406732279516
+      "src": "https://edge-intel.s3.amazonaws.com/jsapp/production/release-2014-ww51/sample-audio-player/sample.zip",
+      "projectGuid": "00000000-0000-0000-0000-000000000000",
+      "lastModifiedDate": 1423606258568,
+      "creationDate": 1423605399057
     },
     "XDK-app-designer": "true",
     "sourceDirectory": "www",
@@ -17,68 +15,53 @@
     "startFile": "index.html",
     "projectFiles": {},
     "projectDirectories": {},
-    "libraries": [
-      {
-        "name": "Cordova",
-        "version": "2.9.0",
-        "data": {
-          "default": true
-        }
-      },
-      {
-        "name": "intelXDK",
-        "version": "4.0.0",
-        "data": {
-          "default": true
-        }
-      }
-    ],
+    "libraries": [],
     "cordovaPlugins": [
       {
         "id": "org.apache.cordova.media-capture",
-        "version": "0.3.0",
+        "version": "?",
         "selectedState": "Auto",
         "data": {},
         "paramvals": {}
       },
       {
         "id": "org.apache.cordova.device",
-        "version": "0.2.9",
+        "version": "?",
         "selectedState": "Auto",
         "data": {},
         "paramvals": {}
       },
       {
         "id": "org.apache.cordova.file",
-        "version": "1.1.0",
+        "version": "?",
         "selectedState": "Auto",
         "data": {},
         "paramvals": {}
       },
       {
         "id": "org.apache.cordova.media",
-        "version": "0.2.10",
+        "version": "?",
         "selectedState": "Auto",
         "data": {},
         "paramvals": {}
       },
       {
         "id": "org.apache.cordova.dialogs",
-        "version": "0.2.6",
+        "version": "?",
         "selectedState": "Auto",
         "data": {},
         "paramvals": {}
       },
       {
         "id": "org.apache.cordova.vibration",
-        "version": "0.3.8",
+        "version": "?",
         "selectedState": "Auto",
         "data": {},
         "paramvals": {}
       },
       {
         "id": "org.apache.cordova.splashscreen",
-        "version": "0.3.0",
+        "version": "?",
         "selectedState": "Auto",
         "data": {},
         "paramvals": {}
@@ -163,7 +146,7 @@
       },
       {
         "id": "com.google.admob",
-        "version": "",
+        "version": "?",
         "selectedState": "Included",
         "data": {},
         "paramvals": {},
@@ -177,94 +160,105 @@
     "buildConfigurations": {
       "Android": {
         "platform_": "android",
+        "runtime_": "Cordova 3.x",
         "name_": "Android",
-        "preferences_": {},
+        "preferences_": {
+          "android-minSdkVersion": "10",
+          "android-targetSdkVersion": "19",
+          "android-installLocation": "auto"
+        },
         "isActive_": true,
         "appName_": "AudioPlayerApp",
         "appID_": "com.elroyashtian.audioplayerapp",
-        "appAccess_": "*",
+        "appAccess_": [],
         "icons_": [],
         "splashes_": [],
-        "iosProvs_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
+        "iosProvs_": [],
         "cordovaCLIVersion_": "?",
         "crosswalkVersion_": "?",
         "appVersion_": "1.0.0",
-        "runtime_": "Cordova 3.x"
+        "appVersionCode_": "1"
       },
       "Android-Crosswalk": {
         "platform_": "android",
+        "runtime_": "Crosswalk with Cordova 3.x",
         "name_": "Android-Crosswalk",
-        "preferences_": {},
+        "preferences_": {
+          "android-minSdkVersion": "14",
+          "android-targetSdkVersion": "19",
+          "android-installLocation": "auto"
+        },
         "isActive_": true,
         "appName_": "AudioPlayerApp",
-        "appID_": "not.yet.specified",
-        "appAccess_": "*",
+        "appID_": "com.elroyashtian.audioplayerapp",
+        "appAccess_": [
+          {
+            "origin": "*"
+          }
+        ],
         "icons_": [],
         "splashes_": [],
-        "iosProvs_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
+        "iosProvs_": [],
         "cordovaCLIVersion_": "?",
         "crosswalkVersion_": "?",
         "appVersion_": "1.0.0",
-        "runtime_": "Crosswalk with Cordova 3.x"
+        "appVersionCode_": "1"
       },
       "iOS": {
         "platform_": "ios",
+        "runtime_": "Cordova 3.x",
         "name_": "iOS",
-        "preferences_": {},
+        "preferences_": {
+          "ios-target": "6",
+          "ios-configuration": "adhoc"
+        },
         "isActive_": true,
         "appName_": "AudioPlayerApp",
-        "appID_": "not.yet.specified",
-        "appAccess_": "*",
+        "appID_": "com.elroyashtian.audioplayerapp",
+        "appAccess_": [
+          {
+            "origin": "*"
+          }
+        ],
         "icons_": [],
         "splashes_": [],
-        "iosProvs_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
+        "iosProvs_": [],
         "cordovaCLIVersion_": "?",
         "crosswalkVersion_": "?",
-        "appVersion_": "1.0.0",
-        "runtime_": "Cordova 3.x"
+        "appVersion_": "1.0.0"
       },
       "Windows8": {
         "platform_": "windows8",
+        "runtime_": "Cordova 3.x",
         "name_": "Windows8",
         "preferences_": {},
         "isActive_": true,
         "appName_": "AudioPlayerApp",
-        "appID_": "not.yet.specified",
-        "appAccess_": "*",
+        "appID_": "com.elroyashtian.audioplayerapp",
+        "appAccess_": [
+          {
+            "origin": "*"
+          }
+        ],
         "icons_": [],
         "splashes_": [],
-        "iosProvs_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
+        "iosProvs_": [],
         "cordovaCLIVersion_": "?",
         "crosswalkVersion_": "?",
-        "appVersion_": "1.0.0.0",
-        "runtime_": "Cordova 3.x"
-      },
-      "WindowsPhone8": {
-        "platform_": "wp8",
-        "name_": "WindowsPhone8",
-        "preferences_": {},
-        "isActive_": true,
-        "appName_": "AudioPlayerApp",
-        "appID_": "not.yet.specified",
-        "appAccess_": "*",
-        "icons_": [],
-        "splashes_": [],
-        "iosProvs_": [],
-        "addlPermissions_": "",
-        "excludedLibraries_": "",
-				"cordovaCLIVersion_": "?",
-        "crosswalkVersion_": "?",
-        "appVersion_": "1.0.0.0",
-        "runtime_": "Cordova 3.x"
+        "appAuthor_": "Intel XDK",
+        "appVersion_": "1.0.0.0"
       }
-    }
+    },
+    "gameAssetDirectory": "asset",
+    "gameMetadata": {},
+    "projectTags": []
   }
 }
