@@ -4,159 +4,33 @@
     "creationData": {
       "type": "App Designer",
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
-      "src": "https://edge-intel.s3.amazonaws.com/jsapp/production/release-2014-ww51/sample-audio-player/sample.zip",
+      "src": "appDesigner",
       "projectGuid": "00000000-0000-0000-0000-000000000000",
-      "lastModifiedDate": 1423606258568,
-      "creationDate": 1423605399057
+      "lastModifiedDate": 1424905841900,
+      "creationDate": 1424897888720
     },
     "XDK-app-designer": "true",
     "sourceDirectory": "www",
-    "cordovaPluginsDirectory": "plugins",
     "startFile": "index.html",
     "projectFiles": {},
     "projectDirectories": {},
     "libraries": [],
+    "serviceMethods": [],
+    "cordovaPluginsDirectory": "plugins",
     "cordovaPlugins": [
       {
-        "id": "org.apache.cordova.media-capture",
-        "version": "?",
-        "selectedState": "Auto",
-        "data": {},
-        "paramvals": {}
-      },
-      {
-        "id": "org.apache.cordova.device",
-        "version": "?",
-        "selectedState": "Auto",
-        "data": {},
-        "paramvals": {}
-      },
-      {
-        "id": "org.apache.cordova.file",
-        "version": "?",
-        "selectedState": "Auto",
-        "data": {},
-        "paramvals": {}
-      },
-      {
-        "id": "org.apache.cordova.media",
-        "version": "?",
-        "selectedState": "Auto",
-        "data": {},
-        "paramvals": {}
-      },
-      {
-        "id": "org.apache.cordova.dialogs",
-        "version": "?",
-        "selectedState": "Auto",
-        "data": {},
-        "paramvals": {}
-      },
-      {
-        "id": "org.apache.cordova.vibration",
-        "version": "?",
-        "selectedState": "Auto",
-        "data": {},
-        "paramvals": {}
-      },
-      {
-        "id": "org.apache.cordova.splashscreen",
-        "version": "?",
-        "selectedState": "Auto",
-        "data": {},
-        "paramvals": {}
-      },
-      {
-        "id": "intel.xdk.accelerometer",
-        "selectedState": "Auto",
-        "data": {},
-        "paramvals": {}
-      },
-      {
-        "id": "intel.xdk.audio",
-        "selectedState": "Auto",
-        "data": {},
-        "paramvals": {}
-      },
-      {
-        "id": "intel.xdk.base",
-        "selectedState": "Auto",
-        "data": {},
-        "paramvals": {}
-      },
-      {
-        "id": "intel.xdk.cache",
-        "selectedState": "Auto",
-        "data": {},
-        "paramvals": {}
-      },
-      {
-        "id": "intel.xdk.camera",
-        "selectedState": "Auto",
-        "data": {},
-        "paramvals": {}
-      },
-      {
-        "id": "intel.xdk.contacts",
-        "selectedState": "Auto",
-        "data": {},
-        "paramvals": {}
-      },
-      {
-        "id": "intel.xdk.device",
-        "selectedState": "Auto",
-        "data": {},
-        "paramvals": {}
-      },
-      {
-        "id": "intel.xdk.display",
-        "selectedState": "Auto",
-        "data": {},
-        "paramvals": {}
-      },
-      {
-        "id": "intel.xdk.facebook",
-        "selectedState": "Auto",
-        "data": {},
-        "paramvals": {}
-      },
-      {
-        "id": "intel.xdk.file",
-        "selectedState": "Auto",
-        "data": {},
-        "paramvals": {}
-      },
-      {
-        "id": "intel.xdk.geolocation",
-        "selectedState": "Auto",
-        "data": {},
-        "paramvals": {}
-      },
-      {
-        "id": "intel.xdk.notification",
-        "selectedState": "Auto",
+        "id": "com.cranberrygame.phonegap.plugin.ad.admob",
+        "selectedState": "Included",
         "data": {},
         "paramvals": {}
       },
       {
         "id": "intel.xdk.player",
-        "selectedState": "Auto",
-        "data": {},
-        "paramvals": {}
-      },
-      {
-        "id": "com.google.admob",
-        "version": "?",
         "selectedState": "Included",
         "data": {},
-        "paramvals": {},
-        "custom": "true",
-        "name": "Google Admob Plugin",
-        "origin": "com.google.admob",
-        "originType": "cordova.io"
+        "paramvals": {}
       }
     ],
-    "serviceMethods": [],
     "buildConfigurations": {
       "Android": {
         "platform_": "android",
@@ -169,16 +43,18 @@
         },
         "isActive_": true,
         "appName_": "AudioPlayerApp",
-        "appID_": "com.elroyashtian.audioplayerapp",
+        "appID_": "xdk.intel.blank.ad.template",
         "appAccess_": [],
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
         "iosProvs_": [],
-        "cordovaCLIVersion_": "?",
-        "crosswalkVersion_": "?",
-        "appVersion_": "1.0.0",
+        "cordovaCLIVersion_": "4.1.2",
+        "crosswalkVersion_": "10",
+        "appVersion_": "0.0.1",
+        "appAuthor_": "Intel XDK",
+        "appDescription_": "Template to develop a Cordova mobile web app using the App Designer UI editor.",
         "appVersionCode_": "1"
       },
       "Android-Crosswalk": {
@@ -192,20 +68,18 @@
         },
         "isActive_": true,
         "appName_": "AudioPlayerApp",
-        "appID_": "com.elroyashtian.audioplayerapp",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appID_": "xdk.intel.blank.ad.template.crosswalk",
+        "appAccess_": [],
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
         "iosProvs_": [],
-        "cordovaCLIVersion_": "?",
-        "crosswalkVersion_": "?",
-        "appVersion_": "1.0.0",
+        "cordovaCLIVersion_": "4.1.2",
+        "crosswalkVersion_": "10",
+        "appVersion_": "0.0.1",
+        "appAuthor_": "Intel XDK",
+        "appDescription_": "Template to develop a Cordova mobile web app using the App Designer UI editor.",
         "appVersionCode_": "1"
       },
       "iOS": {
@@ -218,43 +92,41 @@
         },
         "isActive_": true,
         "appName_": "AudioPlayerApp",
-        "appID_": "com.elroyashtian.audioplayerapp",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appID_": "xdk.intel.blank.ad.template",
+        "appAccess_": [],
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
         "iosProvs_": [],
-        "cordovaCLIVersion_": "?",
-        "crosswalkVersion_": "?",
-        "appVersion_": "1.0.0"
+        "cordovaCLIVersion_": "4.1.2",
+        "crosswalkVersion_": "10",
+        "appVersion_": "0.0.1",
+        "appAuthor_": "Intel XDK",
+        "appDescription_": "Template to develop a Cordova mobile web app using the App Designer UI editor."
       },
       "Windows8": {
         "platform_": "windows8",
         "runtime_": "Cordova 3.x",
         "name_": "Windows8",
-        "preferences_": {},
+        "preferences_": {
+          "windows-publisher-display-name": "",
+          "windows-publisher-id": ""
+        },
         "isActive_": true,
         "appName_": "AudioPlayerApp",
-        "appID_": "com.elroyashtian.audioplayerapp",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appID_": "xdk.intel.blank.ad.template",
+        "appAccess_": [],
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
         "iosProvs_": [],
-        "cordovaCLIVersion_": "?",
-        "crosswalkVersion_": "?",
+        "cordovaCLIVersion_": "4.1.2",
+        "crosswalkVersion_": "10",
+        "appVersion_": "0.0.0.1",
         "appAuthor_": "Intel XDK",
-        "appVersion_": "1.0.0.0"
+        "appDescription_": "Template to develop a Cordova mobile web app using the App Designer UI editor."
       }
     },
     "gameAssetDirectory": "asset",

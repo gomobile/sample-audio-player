@@ -1,11 +1,7 @@
-@gutter_uib_row_1: 20px;
+@gutter_r1: 20px;
 
-.uib_row_1:not(.cright) > .col { padding-right:@gutter_uib_row_1; }
+.uib_row_1 > .col { padding-left:(@gutter_r1 / 2); padding-right:(@gutter_r1 / 2); }
 
-.uib_row_1.cright       > .col { padding-left:@gutter_uib_row_1; }
-
-@media all {
- .col-0_12-12 { width: auto; float: none !important; }
- .urow:not(.cright) > .col-0_12-12 { padding-right:0px !important; }
- .urow.cright       > .col-0_12-12 { padding-left:0px !important; }
+@media all{
+  .col-0     { width: auto; float: none !important;  clear:both; padding-left:0px !important; padding-right:0px !important; }
 }

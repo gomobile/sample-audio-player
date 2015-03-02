@@ -64,12 +64,22 @@ form.urow {
 
    .w85 { width:85px; }
 */
-.vertical-col > * {
+.vertical-col > *,
+.vertical-col > .table-thing,
+.vertical-col > .afScrollPanel > .table-thing,
+.wrapping-col > .no_wrap.table-thing,
+.wrapping-col > .afScrollPanel > .no_wrap.table-thing {
   width: 100%;
 }
-.vertical-col > .table-thing,
-.wrapping-col > .no_wrap.table-thing {
+#afui .vertical-col > .afScrollPanel > .widget,
+#afui .vertical-col > .widget,
+.vertical-col > .widget {
+  width: calc(100% - 10px);
+  margin-left: 5px;
+}
+.col > .vertical-col > .widget {
   width: 100%;
+  margin-left: 0;
 }
 .table-thing {
   display: table;
@@ -82,21 +92,35 @@ form.urow {
   display: table-cell;
 }
 /* wrapping column */
-.wrapping-col.right > * {
+.wrapping-col.right > *,
+.wrapping-col.right > .afScrollPanel > * {
   float: right;
 }
 /* margin: 0 5px;   move margin to another class */
-.wrapping-col.left > * {
+.wrapping-col.left > *,
+.wrapping-col.left > .afScrollPanel > * {
   float: left;
 }
-.vertical-col.right > * {
+/* center and right alignment */
+.vertical-col.center {
+  text-align: center;
+}
+.vertical-col.right {
+  text-align: right;
+}
+.vertical-col.right > *,
+.col > .vertical-col.right > .widget,
+.vertical-col.right > .afScrollPanel > * {
   margin-left: auto;
 }
-.vertical-col.center > * {
+.vertical-col.center > *,
+.col > .vertical-col.center > .widget,
+.vertical-col.center > .afScrollPanel > * {
   margin-left: auto;
   margin-right: auto;
 }
-.wrapping-col:not(.horiz-area) > .no_wrap {
+.wrapping-col:not(.horiz-area) > .no_wrap,
+.wrapping-col:not(.horiz-area) > .afScrollPanel > .no_wrap {
   float: none;
   clear: both;
   /* margin: 8px 0px; */
@@ -130,7 +154,7 @@ form.urow {
   box-sizing: content-box;
 }
 /* page */
-.hidden {
+.hidden:not(.afPopup) {
   display: none;
 }
 .upage-content,
@@ -141,7 +165,6 @@ html,
 body {
   height: 100%;
 }
-body:not(#afui) .uwrap,
 body:not(#afui) .upage,
 body:not(#afui) .upage-content {
   height: 100%;
@@ -220,36 +243,28 @@ body:not(#afui) .upage-outer {
 .template {
   display: none !important;
 }
-@media all {
-  #afui .background-color {
-    background-color: #6e6e6e;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-  }
+.uib-absolute {
+  position: absolute !important;
 }
-.uib_row_1:not(.cright) > .col {
-  padding-right: 20px;
-}
-.uib_row_1.cright > .col {
-  padding-left: 20px;
+.uib_row_1 > .col {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 @media all {
-  .col-0_12-12 {
+  .col-0 {
     width: auto;
     float: none !important;
-  }
-  .urow:not(.cright) > .col-0_12-12 {
-    padding-right: 0px !important;
-  }
-  .urow.cright > .col-0_12-12 {
+    clear: both;
     padding-left: 0px !important;
+    padding-right: 0px !important;
   }
 }
 @media all {
   #afui .grid-pad {
-    padding-top: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 @media all and (min-width: 0px) {
@@ -264,32 +279,41 @@ body:not(#afui) .upage-outer {
   float: right;
 }
 @media all {
-  #afui .d-margins {
-    margin-bottom: 10px;
-  }
-  #afui .wrapping-col > .d-margins {
+  #afui .wrapping-col > .d-margins,
+  #afui .wrapping-col > .afScrollPanel > .d-margins {
     margin-left: 6px;
     margin-right: 6px;
   }
+  #afui .wrapping-col > .d-margins,
+  #afui .wrapping-col > .afScrollPanel > .d-margins {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+  #afui .d-margins {
+    margin-bottom: 10px;
+  }
 }
 @media all {
-  #afui .text-style p {
-    font-size: 20px;
-    font-weight: bold;
+  
+}
+@media all {
+  #afui .Middle p {
     color: #ffffff;
-    font-family: sans-serif;
     text-decoration: underline;
     text-align: center;
   }
 }
 @media all {
-  #afui .contentname-text p {
-    font-style: italic;
-    font-weight: bold;
-    color: #68ccdd;
-    font-family: serif;
+  #afui .MainPage_BG {
+    background-color: #8a8a8a;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
   }
 }
-.background {
-  background-color: #6e6e6e;
+@media all {
+  #afui .Audio_Text p {
+    font-style: italic;
+    color: #00ffff;
+  }
 }
