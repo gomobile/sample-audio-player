@@ -1,18 +1,30 @@
 {
-	"reponame":"sample-audio-player",
-	"title":"Audio Player App",
-	"abbr":"AudioPlayer App",
-	"tooltip":"[App Designer Ready] This sample application demonstrates how to play audio files local to the project, online podcast, online .m3u playlist and files on device. This sample has AdMob Banner and Interstitial ads intergrated using the com.google.admob Apache Cordova* plug-in maintained by admob.",
-	"description":"[App Designer Ready] This sample application demonstrates how to play audio files local to the project, online podcast, online .m3u playlist and files on device. This sample has AdMob Banner and Interstitial ads intergrated using the com.google.admob Apache Cordova* plug-in maintained by admob.",
-	"articleurl":"https://software.intel.com/en-us/html5/articles/html5-hybrid-apps-with-admob-cordova-plugin",
-    	"screenshotUrl":"",
-    	"iconUrl":"",
-	"highlights":["App Designer", "App Framework", "Apache Cordova API", "Ads","Monetize"],
-    	"keywords":["App Designer", "App Framework", "Apache Cordova API", "Ads","Monetize"],
-	"visible": "true",
-	"apppreview":"true",
-	"type":"appdesigner",
-	"appname":"demo.audioapp",
-	"relname":"4.0.0",
-  	"projectTypeName": "com.intel.xdk.projecttype.jsapp"
+   "abbr" : "AudioPlayer App",
+   "description" : "[App Designer Ready] This sample application demonstrates how to play audio files local to the project, online podcast, online .m3u playlist and files on device. This sample has AdMob Banner and Interstitial ads intergrated using the com.google.admob Apache Cordova* plug-in maintained by admob.",
+   "title" : "Audio Player App",
+   "appName" : "demo.audioapp",
+   "repoName" : "sample-audio-player",
+   "relName" : "4.0.0",
+   "type" : "appdesigner",
+   "highlights" : [
+      "App Designer",
+      "App Framework",
+      "Apache Cordova API",
+      "Ads",
+      "Monetize"
+   ],
+   "iconUrl" : "",
+   "articleUrl" : "https://software.intel.com/en-us/html5/articles/html5-hybrid-apps-with-admob-cordova-plugin",
+   "tooltip" : "[App Designer Ready] This sample application demonstrates how to play audio files local to the project, online podcast, online .m3u playlist and files on device. This sample has AdMob Banner and Interstitial ads intergrated using the com.google.admob Apache Cordova* plug-in maintained by admob.",
+   "appPreview" : "true",
+   "visible" : "true",
+   "screenshotUrl" : "",
+   "keywords" : [
+      "App Designer",
+      "App Framework",
+      "Apache Cordova API",
+      "Ads",
+      "Monetize"
+   ],
+   "projectTypeName" : "com.intel.xdk.projecttype.jsapp"
 }
