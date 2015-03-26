@@ -1,153 +1,107 @@
 <!DOCTYPE html>
+<!--HTML5 doctype-->
 <html>
-    <!--
-  * Please see the included README.md file for license terms and conditions.
-  -->
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Blank App Designer Cordova Web App Project Template</title>
-        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-
-        <!--
-  * The "meta viewport" tag (below) helps your app size appropriately to a device's ideal viewport.
-  * Note that Windows device viewports work better when initialized using the @viewport CSS rule.
-  * For a quick overview of "meta viewport" and @viewport, see this article:
-  *   http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag
-  * To see how it works, try your app on a real device with and without a "meta viewport" tag.
-  * Additional useful references include:
-  *   http://www.quirksmode.org/mobile/viewports.html
-  *   http://www.quirksmode.org/mobile/metaviewport/devices.html
-  *   https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html
--->
-
-        <!-- <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1"> -->
-        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
-
-        <style>
-            /* following three (cascaded) are equivalent to above three meta viewport statements */
-            /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html */
-            /* see http://dev.w3.org/csswg/css-device-adapt/ */
-                @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
-                @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
-                /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
-        </style>
-
-        <link rel="stylesheet" href="css/app.css">
-        <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
-
-        <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
-        <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work below -->
-        <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
-
-        <!-- Recommended location for your JavaScript libraries -->
-        <!-- These library references (below) are just examples to give you the general idea... -->
-        <!-- <script src="lib/mc/hammer.js"></script> -->
-        <!-- <script src="lib/ft/fastclick.js"></script> -->
-
-        <!-- Uncomment this script element if you convert your "Cordova web app" to a "Standard HTML5 web app" -->
-        <!--
-    <script type="text/javascript" id="xdkJSdevBrowser_">
-        window.dev = window.dev || {} ;         // object used by init-dev.js, which detects various ready events
-        dev.BROWSER = 500 ;                     // msecs, in non-Cordova app we don't care about "deviceready" events
-    </script>
--->
-
-        <!--
-  * cordova.js is a phantom lib for "Cordova HTML5 web app," it does nothing in a "Standard HTML5 web app"
-  * Seeing a "Failed to load resource: net::ERR_FILE_NOT_FOUND" message caused by this "cordova.js" script?
-  * The cordova.js script is required if you convert your "Standard HTML5" project into a "Cordova" project.
-  * You can safely ignore the error or comment out this line if you will not be developing a Cordova app.
--->
-        <script src="cordova.js" id="xdkJScordova_"></script>
-
-        <script src="js/app.js"></script>
-        <!-- for your event code, see README and file comments for details -->
-        <script src="js/init-app.js"></script>
-        <!-- for your init code, see README and file comments for details -->
-        <script src="xdk/init-dev.js"></script>
-        <!-- normalizes device and document ready events, see file for details -->
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+		<title>Your New Application</title>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+		<style type="text/css">
+			/* Prevent copy paste for all elements except text fields */
+			*  { -webkit-user-select:none; -webkit-tap-highlight-color:rgba(255, 255, 255, 0); }
+			input, textarea  { -webkit-user-select:text; }
+		</style>
+		<script src="intelxdk.js"></script>
+		<script src="cordova.js"></script>
+		<script src="xhr.js"></script>
         <script src="js/main.js"></script>
-    </head>
+	</head>
 
-    <body id="afui" onload="onDocLoad()">
+	<body id="afui" onload="onDocLoad()" class="background">
 
-        <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
-        <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work above -->
-        <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
-        <div id="content" class="uwrap">
-            <div class="upage vertical-col left panel" id="mainpage" data-header="none" data-footer="none">
-                <div class="grid grid-pad urow uib_row_1 row-height-1 MainPage_BG" data-uib="layout/row" data-ver="0">
-                    <div class="col uib_col_2 col-0" data-uib="layout/col" data-ver="0">
-                        <div class="widget-container content-area vertical-col">
+		<!-- content goes here-->
+		<div class="uwrap" id="content">
+			<div class="upage panel background-color" id="mainpage" data-header="none" data-footer="none">
+				<div class="upage-outer">
+					<div class="upage-content" id="mainsub">
 
-                            <div class="widget uib_w_1 d-margins Middle" data-uib="media/text" data-ver="0">
-                                <div class="widget-container left-receptacle"></div>
-                                <div class="widget-container right-receptacle"></div>
-                                <div>
-                                    <p>Local Music</p>
-                                </div>
-                            </div>
-                            <div class="widget uib_w_2 d-margins Audio_Text" data-uib="media/text" data-ver="0">
-                                <div class="widget-container left-receptacle"></div>
-                                <div class="widget-container right-receptacle"></div>
-                                <div>
-                                    <p>Calm Ocean Breeze</p>
-                                </div>
-                            </div>
-                            <audio class="widget uib_w_3 d-margins" data-uib="media/audio" data-ver="0" controls="controls">
-                                <source src="sounds/calm-ocean-breeze.wav" type="audio/mpeg">
-                                    <source src="my/video/src.ogg" type="audio/ogg">
-                            </audio>
-                            <div class="widget uib_w_4 d-margins Audio_Text" data-uib="media/text" data-ver="0">
-                                <div class="widget-container left-receptacle"></div>
-                                <div class="widget-container right-receptacle"></div>
-                                <div>
-                                    <p>Musical Compilation</p>
-                                </div>
-                            </div>
-                            <audio class="widget uib_w_5 d-margins" data-uib="media/audio" data-ver="0" controls="controls">
-                                <source src="sounds/xylophones-bass-drums-and-snare-drums-ambience.wav" type="audio/mpeg">
-                                    <source src="my/video/src.ogg" type="audio/ogg">
-                            </audio>
-                            <div class="widget uib_w_9 d-margins Middle" data-uib="media/text" data-ver="0">
-                                <div class="widget-container left-receptacle"></div>
-                                <div class="widget-container right-receptacle"></div>
-                                <div>
-                                    <p>Streaming ONLINE Audio</p>
-                                </div>
-                            </div>
-                            <div class="widget uib_w_6 d-margins Audio_Text" data-uib="media/text" data-ver="0">
-                                <div class="widget-container left-receptacle"></div>
-                                <div class="widget-container right-receptacle"></div>
-                                <div>
-                                    <p>IGN Nintendo Voice Chat Podcast</p>
-                                </div>
-                            </div>
-                            <audio class="widget uib_w_10 d-margins" data-uib="media/audio" data-ver="0" controls="controls">
-                                <source src="http://traffic.libsyn.com/ignwii/Nintendo_Voice_Chat__Show_and_Tell_With_Our_Favorite_Nintendo_Treasures.mp3" type="audio/mpeg">
-                                    <!--                                    <source src="my/video/src.ogg" type="audio/ogg">-->
-                            </audio>
+						<div class="grid grid-pad urow uib_row_1 row-height-1" data-uib="layout/row" data-ver="0">
+							<div class="col uib_col_1 col-0_12-12" data-uib="layout/col" data-ver="0">
+								<div class="widget-container content-area vertical-col">
 
-                            <div class="widget uib_w_8 d-margins Audio_Text" data-uib="media/text" data-ver="0">
-                                <div class="widget-container left-receptacle"></div>
-                                <div class="widget-container right-receptacle"></div>
-                                <div>
-                                    <p>Archive.org How To Be More Aware Of The World Around You M3U Playlist</p>
-                                </div>
-                            </div>
-                            <audio class="widget uib_w_11 d-margins" data-uib="media/audio" data-ver="0" controls="controls">
-                                <source src="https://archive.org/download/Item395HowToBeMoreAwareOfTheWorldAroundYou/download%2FItem395HowToBeMoreAwareOfTheWorldAroundYou%2FItem395HowToBeMoreAwareOfTheWorldAroundYou_vbr.m3u" type="audio/mpeg">
-                                    <source src="my/video/src.ogg" type="audio/ogg">
-                            </audio>
-                            <span class="uib_shim"></span>
-                        </div>
-                    </div>
-                    <span class="uib_shim"></span>
-                </div>
-            </div>
-        </div>
-    </body>
+									<div class="widget uib_w_1 d-margins text-style" data-uib="media/text" data-ver="0">
+										<div class="widget-container left-receptacle"></div>
+										<div class="widget-container right-receptacle"></div>
+										<div>
+											<p>Local Music</p>
+										</div>
+									</div>
+									<div class="widget uib_w_3 d-margins contentname-text" data-uib="media/text" data-ver="0">
+										<div class="widget-container left-receptacle"></div>
+										<div class="widget-container right-receptacle"></div>
+										<div>
+											<p>Calm Ocean Breeze</p>
+										</div>
+									</div>
+									<audio class="widget uib_w_2 d-margins" data-uib="media/audio" data-ver="0" controls="controls">
+										<source src="sounds/calm-ocean-breeze.wav" type="audio/wav">
+
+									</audio>
+									<div class="widget uib_w_5 d-margins contentname-text" data-uib="media/text" data-ver="0">
+										<div class="widget-container left-receptacle"></div>
+										<div class="widget-container right-receptacle"></div>
+										<div>
+											<p>Musical Compilation</p>
+										</div>
+									</div>
+									<audio class="widget uib_w_4 d-margins" data-uib="media/audio" data-ver="0" controls="controls">
+										<source src="sounds/xylophones-bass-drums-and-snare-drums-ambience.wav" type="audio/wav">
+									</audio>
+									<div class="widget uib_w_6 d-margins text-style" data-uib="media/text" data-ver="0">
+										<div class="widget-container left-receptacle"></div>
+										<div class="widget-container right-receptacle"></div>
+										<div>
+											<p>Streaming ONLINE Audio</p>
+										</div>
+									</div>
+									<div class="widget uib_w_7 d-margins contentname-text" data-uib="media/text" data-ver="0">
+										<div class="widget-container left-receptacle"></div>
+										<div class="widget-container right-receptacle"></div>
+										<div>
+											<p>IGN Nintendo Voice Chat Podcast</p>
+										</div>
+									</div>
+									<audio class="widget uib_w_8 d-margins" data-uib="media/audio" data-ver="0" controls="controls">
+										<source src="http://traffic.libsyn.com/ignwii/Nintendo_Voice_Chat__Show_and_Tell_With_Our_Favorite_Nintendo_Treasures.mp3" type="audio/mpeg">
+									</audio>
+									<div class="widget uib_w_9 d-margins contentname-text" data-uib="media/text" data-ver="0">
+										<div class="widget-container left-receptacle"></div>
+										<div class="widget-container right-receptacle"></div>
+										<div>
+											<p>Archive.org How To Be More Aware Of The World Around You M3U Playlist</p>
+										</div>
+									</div>
+									<audio class="widget uib_w_10 d-margins" data-uib="media/audio" data-ver="0" controls="controls">
+										<source src="https://archive.org/download/Item395HowToBeMoreAwareOfTheWorldAroundYou/download%2FItem395HowToBeMoreAwareOfTheWorldAroundYou%2FItem395HowToBeMoreAwareOfTheWorldAroundYou_vbr.m3u" type="audio/mpegURL">
+											<source src="my/video/src.mp4" type="audio/ogg">
+									</audio><span class="uib_shim"></span>
+								</div>
+							</div>
+							<span class="uib_shim"></span>
+						</div>
+					</div>
+					<!-- /upage-content -->
+
+				</div>
+				<!-- /upage-outer -->
+
+			</div>
+			<!-- /upage -->
+
+		</div>
+		<!-- /uwrap -->
+	</body>
 
 </html>
