@@ -1,7 +1,17 @@
-Blank HTML App Designer Template for Building Mobile Cordova Web Apps
+Audio Player Cordova App
 =====================================================================
 
 See [LICENSE.md](<LICENSE.md>) for license terms and conditions.
+
+## Project Details ##
+
+This sample is part of the Intel® XDK. 
+Download the Intel® XDK at [http://software.intel.com/en-us/html5](http://software.intel.com/en-us/html5). To see the technical details of the sample and for a 9-patch splash screen creation tutorial, 
+please visit the **[included tutorial][]**. 
+[included tutorial]: docs/README.md
+
+The Audio Player App is designed using Intel XDK App Designer tool under the Develop Tab. It uses the com.google.admob Cordova plug-in  for displaying ads on screen. An Google/AdMob account is required to obtain an ad unit id for displaying banner or interstitial ads on the desired platform.
+
 
 Use this template as a starting point for an Intel XDK App Designer project that
 will be distributed as a *mobile Cordova web app*. The file named `init-dev.js`
@@ -11,10 +21,7 @@ its own code. This technique allows App Designer to use a standard init sequence
 regardless of the specific package type (a *packaged web app* or a *Cordova web
 app*).
 
-The `icon.png` and `screenshot.png` files are not required by your project. They
-are included for use by the Intel XDK template/demo panel and have no use within
-a real app. You can safely delete them from your project directory.
-
+## Project File Information ##
 You can build a *Cordova web app* from this template that can be submitted to a
 store using the "Cordova Hybrid Mobile App Platforms" build tiles (for
 Crosswalk, Android, iOS and Windows). The `intelxdk.config.additions.xml` file
@@ -28,6 +35,10 @@ Cordova project into a Standard project is to create a new "Standard" project
 from the appropriate template and copy your files from this project into that
 new project.
 
+The `icon.png` and `screenshot.png` files are not required by your project. They
+are included for use by the Intel XDK template/demo panel and have no use within
+a real app. You can safely delete them from your project directory.
+
 The `cordova.js` script is needed to provide your app with access to Cordova
 APIs. To add Cordova APIs to your application you must add the corresponding
 Cordova plugins. See the *Plugins* section on the **Projects** tab.
@@ -39,11 +50,11 @@ only needed for apps built using the legacy AppMobi build containers on the
 containers for all new applications. These script files can be added by hand, if
 you require them, as follows:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<script src="intelxdk.js" id="xdkJSintelxdk_"></script>
-<script src="cordova.js" id="xdkJScordova_"></script>
-<script src="xhr.js" id="xdkJSxhr_"></script>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    <script src="intelxdk.js" id="xdkJSintelxdk_"></script>
+    <script src="cordova.js" id="xdkJScordova_"></script>
+    <script src="xhr.js" id="xdkJSxhr_"></script>
+
 
 The id tags are there to help future versions of the Intel XDK precisely
 identify these special lines in your `index.html` file; your application does
@@ -54,3 +65,14 @@ web app. In a Cordova web app this is controlled via the *Domain Access
 Whitelist* in the *Build Settings* section of the **Projects** tab. For details
 regarding how to specify your domain whitelist see this Cordova doc page:
 <http://cordova.apache.org/docs/en/4.0.0/guide_appdev_whitelist_index.md.html#Whitelist%20Guide>
+
+Important App Files
+---------------------------
+* index.html
+* icon.png
+* screenshot.png
+* app.json
+* README.md
+* js/*
+* css/*
+* sounds/*
