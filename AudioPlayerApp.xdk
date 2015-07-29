@@ -33,7 +33,7 @@
                 "runtime_": "Cordova 3.x",
                 "name_": "Android",
                 "preferences_": {
-                    "android-minSdkVersion": "10",
+                    "android-minSdkVersion": "14",
                     "android-targetSdkVersion": "19",
                     "android-installLocation": "auto"
                 },
