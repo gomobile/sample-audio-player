@@ -1,0 +1,157 @@
+/*
+ * Please see the included README.md file for license terms and conditions.
+ */
+/* This file is completely optional and not required. */
+/* Note the reference that includes it in the index.html file. */
+/* Disable certain interactions on touch devices */
+/* SOURCE: https://github.com/ftlabs/fastclick/blob/master/examples/input.html */
+/* LICENSE: https://github.com/ftlabs/fastclick/blob/master/LICENSE */
+
+body {
+    /*background-image: rgb(204,204,204);*/
+    
+    background-color: #cccccc;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#b7b7b7), to(#cccccc));
+    background-image: -webkit-linear-gradient(top, #b7b7b7, #cccccc);
+    background-image: -moz-linear-gradient(top, #b7b7b7, #cccccc);
+    background-image: -o-linear-gradient(top, #b7b7b7, #cccccc);
+    background-image: linear-gradient(to bottom, #b7b7b7, #cccccc);
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+/* Recommended for Windows 8 Phone 
+/* SOURCE: http://www.excellentwebworld.com/common-problems-solution-for-windows-phone-8-phonegap */
+
+html {
+    -ms-touch-action: pan-x;
+}
+
+div {
+    text-align: center;
+}
+
+
+/* Recommended for Windows 8 Phone */
+/* SOURCE: http://www.excellentwebworld.com/common-problems-solution-for-windows-phone-8-phonegap */
+/* allow copy-paste */
+
+input,
+textarea {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+     background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 225px;
+    border: rgb(153, 153, 153) 1px solid;
+    font: normal 14px/120% "Intel Clear W Italic", Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    text-align: left;
+}
+
+.align-center {
+    text-align: center;
+}
+
+button {
+    background-image: -webkit-gradient(linear, 43% 0%, 43% 110%, color-stop(0, rgb(221, 221, 221)), color-stop(0.01, rgb(221, 221, 221)), color-stop(0.04, rgb(204, 204, 204)), color-stop(1, rgb(170, 170, 170)));
+    background-image: -webkit-linear-gradient(-90deg, rgb(221, 221, 221) 0%, rgb(221, 221, 221) 1%, rgb(204, 204, 204) 4%, rgb(170, 170, 170) 100%);
+    background-image: linear-gradient(180deg, rgb(221, 221, 221) 0%, rgb(221, 221, 221) 1%, rgb(204, 204, 204) 4%, rgb(170, 170, 170) 100%);
+    width: auto;
+    height: auto;
+    border: rgb(153, 153, 153) 1px solid;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    margin: 5px;
+    padding: 17px;
+    font: normal 16px/120% "Intel Clear W", Arial, sans-serif;
+    color: rgb(84, 84, 84);
+    text-align: center;
+    text-shadow: 0px 1px 0px rgb(221, 221, 221);      
+    margin-bottom: 15px;
+}
+
+button:focus {
+ background-image: -webkit-gradient(linear, 43% 0%, 43% 110%, color-stop(0, rgb(136,136,136)), color-stop(0.01, rgb(136,136,136)), color-stop(0.04, rgb(119,119,119)), color-stop(1, rgb(102,102,102)));
+    width: auto;
+    height: auto;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    margin: 5px;
+    padding: 17px;
+    font: normal 16px/120% "Intel Clear W", Arial, sans-serif;
+    color: rgb(238,238,238);
+    text-align: center;
+    text-shadow: 0px 1px 0px rgb(85,85,85);
+    margin-bottom: 15px;
+    outline:none;
+}
+
+labels {
+    font: normal 14px/180% "Intel Clear W", Arial, sans-serif;
+    color: rgb(84, 84, 84);
+    text-align: right;
+}
+
+
+.Scroll Bar {
+    background-color: rgb(204, 204, 204);
+    width: 7px;
+    height: auto;
+    -webkit-border-radius: 57%/3%;
+    border-radius: 57%/3%;
+}
+
+h1 {
+    font: normal 38px/120% "Intel Clear W", Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    text-align: center;
+    text-shadow: 0px 1px 0px rgb(238, 238, 238);
+}
+
+h2 {
+    font: normal 16px/120% "Intel Clear W", Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    text-align: center;
+    text-shadow: 0px 1px 0px rgb(238, 238, 238);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
