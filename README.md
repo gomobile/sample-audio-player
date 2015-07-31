@@ -6,22 +6,20 @@ See [LICENSE.md](<LICENSE.md>) for license terms and conditions.
 ## Project Details ##
 
 This sample is part of the Intel® XDK. 
-Download the Intel® XDK at [http://software.intel.com/en-us/html5](http://software.intel.com/en-us/html5). To see the technical details of the sample and for a 9-patch splash screen creation tutorial, 
+Download the Intel® XDK at [http://software.intel.com/en-us/html5](http://software.intel.com/en-us/html5). With the Audio Player sample you can play audio with Apache Cordova Media API, Cordova Low Latency Audio Plugin for iOS and Android and the HTML5 Audio tag.
+
+
+The Audio Player App demonstrates how to play local and stream online audio files using the Cordova* media plugin. It also demonstrates use of the [Cordova Low Latency Audio Plugin for iOS and Android](https://github.com/floatinghotpot/testaudio/tree/master/plugins/com.rjfun.cordova.plugin.lowlatencyaudio) to demonstrates playing two music files concurrently. To see the technical details of the sample, 
 please visit the **[included tutorial][]**. 
 [included tutorial]: docs/README.md
 
-The Audio Player App is designed using Intel XDK App Designer tool under the Develop Tab. It uses the com.google.admob Cordova plug-in  for displaying ads on screen. An Google/AdMob account is required to obtain an ad unit id for displaying banner or interstitial ads on the desired platform.
 
 
-Use this template as a starting point for an Intel XDK App Designer project that
-will be distributed as a *mobile Cordova web app*. The file named `init-dev.js`
-included as part of this project contains init code that generates an
-`app.Ready` event; which is used as a way to normalize how App Designer starts
-its own code. This technique allows App Designer to use a standard init sequence
-regardless of the specific package type (a *packaged web app* or a *Cordova web
-app*).
 
 ## Project File Information ##
+
+The file named `init-app.js` included as part of this project contains init code that runs after underlying device native code and webview/browser is ready. The file named `app.js` contains your event handlers, the center of your application. It defines  the API methods used. 
+
 You can build a *Cordova web app* from this template that can be submitted to a
 store using the "Cordova Hybrid Mobile App Platforms" build tiles (for
 Crosswalk, Android, iOS and Windows). The `intelxdk.config.additions.xml` file
@@ -69,10 +67,8 @@ regarding how to specify your domain whitelist see this Cordova doc page:
 Important App Files
 ---------------------------
 * index.html
-* icon.png
-* screenshot.png
-* app.json
 * README.md
+* *.xdk
 * js/*
 * css/*
 * sounds/*

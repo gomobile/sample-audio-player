@@ -1,15 +1,14 @@
 {
     "project": {
-        "projectSettingsVersion": 1.2,
+        "projectSettingsVersion": "1.2",
         "creationData": {
-            "type": "App Designer",
             "projectTypeName": "com.intel.xdk.projecttype.jsapp",
-            "src": "appDesigner",
+            "src": "https://appcenter.html5tools-software.intel.com/api/v2.0/redirect/projectrenderers/release-2015-ww25/jsapp/templates-blank-cordova-project/sample.zip",
             "projectGuid": "00000000-0000-0000-0000-000000000000",
-            "lastModifiedDate": 1427328280321,
-            "creationDate": 1424897888720
+            "lastModifiedDate": 1438369350325,
+            "creationDate": 1436395926896
         },
-        "XDK-app-designer": "true",
+        "XDK-app-designer": "false",
         "sourceDirectory": "www",
         "startFile": "index.html",
         "projectFiles": {},
@@ -19,7 +18,40 @@
         "cordovaPluginsDirectory": "plugins",
         "cordovaPlugins": [
             {
-                "id": "com.cranberrygame.phonegap.plugin.ad.admob",
+                "id": "org.apache.cordova.device",
+                "version": "?",
+                "selectedState": "Included",
+                "data": {},
+                "paramvals": {},
+                "dependsOn": [],
+                "dependedBy": []
+            },
+            {
+                "id": "org.apache.cordova.splashscreen",
+                "version": "?",
+                "selectedState": "Included",
+                "data": {},
+                "paramvals": {},
+                "dependsOn": [],
+                "dependedBy": []
+            },
+            {
+                "id": "com.rjfun.cordova.plugin.lowlatencyaudio",
+                "version": "?",
+                "selectedState": "Included",
+                "data": {},
+                "paramvals": {},
+                "dependsOn": [],
+                "dependedBy": [],
+                "custom": "true",
+                "name": "Low Latency Audio Plugin",
+                "origin": "com.rjfun.cordova.plugin.lowlatencyaudio",
+                "originType": "cordova.io",
+                "sourceLocation": ""
+            },
+            {
+                "id": "org.apache.cordova.media",
+                "version": "?",
                 "selectedState": "Included",
                 "data": {},
                 "paramvals": {},
@@ -28,35 +60,6 @@
             }
         ],
         "buildConfigurations": {
-            "Android": {
-                "platform_": "android",
-                "runtime_": "Cordova 3.x",
-                "name_": "Android",
-                "preferences_": {
-                    "android-minSdkVersion": "14",
-                    "android-targetSdkVersion": "19",
-                    "android-installLocation": "auto"
-                },
-                "isActive_": true,
-                "appName_": "AudioPlayerApp",
-                "appID_": "xdk.intel.blank.ad.template",
-                "appAccess_": [
-                    {
-                        "origin": "*"
-                    }
-                ],
-                "icons_": [],
-                "splashes_": [],
-                "addlPermissions_": "",
-                "excludedLibraries_": "",
-                "iosProvs_": [],
-                "cordovaCLIVersion_": "?",
-                "crosswalkVersion_": "?",
-                "appVersion_": "0.0.1",
-                "appAuthor_": "Intel XDK",
-                "appDescription_": "Template to develop a Cordova mobile web app using the App Designer UI editor.",
-                "appVersionCode_": "1"
-            },
             "Android-Crosswalk": {
                 "platform_": "android",
                 "runtime_": "Crosswalk with Cordova 3.x",
@@ -68,7 +71,7 @@
                 },
                 "isActive_": true,
                 "appName_": "AudioPlayerApp",
-                "appID_": "xdk.intel.blank.ad.template.crosswalk",
+                "appID_": "xdk.intel.demo.audioplayer",
                 "appAccess_": [
                     {
                         "origin": "*"
@@ -82,8 +85,37 @@
                 "cordovaCLIVersion_": "?",
                 "crosswalkVersion_": "?",
                 "appVersion_": "0.0.1",
+                "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection.",
                 "appAuthor_": "Intel XDK",
-                "appDescription_": "Template to develop a Cordova mobile web app using the App Designer UI editor.",
+                "appVersionCode_": "1"
+            },
+            "Android": {
+                "platform_": "android",
+                "runtime_": "Cordova 3.x",
+                "name_": "Android",
+                "preferences_": {
+                    "android-minSdkVersion": "14",
+                    "android-targetSdkVersion": "19",
+                    "android-installLocation": "auto"
+                },
+                "isActive_": true,
+                "appName_": "AudioPlayerApp",
+                "appID_": "xdk.intel.demo.audioplayer",
+                "appAccess_": [
+                    {
+                        "origin": "*"
+                    }
+                ],
+                "icons_": [],
+                "splashes_": [],
+                "addlPermissions_": "",
+                "excludedLibraries_": "",
+                "iosProvs_": [],
+                "cordovaCLIVersion_": "?",
+                "crosswalkVersion_": "?",
+                "appVersion_": "0.0.1",
+                "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection.",
+                "appAuthor_": "Intel XDK",
                 "appVersionCode_": "1"
             },
             "iOS": {
@@ -96,7 +128,7 @@
                 },
                 "isActive_": true,
                 "appName_": "AudioPlayerApp",
-                "appID_": "xdk.intel.blank.ad.template",
+                "appID_": "xdk.intel.demo.audioplayer",
                 "appAccess_": [
                     {
                         "origin": "*"
@@ -111,7 +143,7 @@
                 "crosswalkVersion_": "?",
                 "appVersion_": "0.0.1",
                 "appAuthor_": "Intel XDK",
-                "appDescription_": "Template to develop a Cordova mobile web app using the App Designer UI editor."
+                "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection."
             },
             "Windows8": {
                 "platform_": "windows8",
@@ -123,7 +155,7 @@
                 },
                 "isActive_": true,
                 "appName_": "AudioPlayerApp",
-                "appID_": "xdk.intel.blank.ad.template",
+                "appID_": "xdk.intel.demo.audioplayer",
                 "appAccess_": [
                     {
                         "origin": "*"
@@ -138,7 +170,7 @@
                 "crosswalkVersion_": "?",
                 "appVersion_": "0.0.0.1",
                 "appAuthor_": "Intel XDK",
-                "appDescription_": "Template to develop a Cordova mobile web app using the App Designer UI editor."
+                "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection."
             },
             "WebApp": {
                 "platform_": "webapp",
@@ -160,14 +192,13 @@
                 "appAuthor_": "Intel XDK",
                 "appVersion_": "0.0.1"
             },
-            "Firefox": {
-                "platform_": "firefoxos",
-                "runtime_": "W3C on Firefox OS",
-                "name_": "Firefox",
+            "Chrome": {
+                "platform_": "chromeos",
+                "runtime_": "W3C on Chrome OS",
+                "name_": "Chrome",
                 "preferences_": {},
                 "isActive_": false,
                 "appName_": "AudioPlayerApp",
-                "appAuthor_": "Intel XDK",
                 "appID_": "not.yet.specified",
                 "appAccess_": [
                     {
@@ -178,12 +209,13 @@
                 "splashes_": [],
                 "addlPermissions_": "",
                 "excludedLibraries_": "",
+                "appAuthor_": "Intel XDK",
                 "appVersion_": "0.0.1"
             },
-            "Chrome": {
-                "platform_": "chromeos",
-                "runtime_": "W3C on Chrome OS",
-                "name_": "Chrome",
+            "Firefox": {
+                "platform_": "firefoxos",
+                "runtime_": "W3C on Firefox OS",
+                "name_": "Firefox",
                 "preferences_": {},
                 "isActive_": false,
                 "appName_": "AudioPlayerApp",
