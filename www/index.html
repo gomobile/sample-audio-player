@@ -50,6 +50,7 @@
     <!-- for your init code, see README and file comments for details -->
     <script src="xdk/init-dev.js"></script>
     <!-- normalizes device and document ready events, see file for details -->
+    <script src="js/util.js"></script> 
 
     <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
     <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work above -->
@@ -68,9 +69,9 @@
     <h2>Using Cordova Media API</h2>
     <!--    Cordova Media API is compatible with the emulator (when using wav and ogg files) and app preview-->
     <div>
-    <button type="button" onclick="playAudio('http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3');">Play</button>
-<!--    <button type="button" onclick="pauseAudio();">Pause</button>-->
-    <button type="button" onclick="stopAudio();">Stop</button></div>
+    <button type="button" onclick="playCordovaAudio('http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3');">Play</button>
+<!--    <button type="button" onclick="pauseCordovaAudio();">Pause</button>-->
+    <button type="button" onclick="stopCordovaAudio();">Stop</button></div>
     
 
 
@@ -90,7 +91,9 @@
     <audio controls>
         <source src="http://traffic.libsyn.com/ignwii/Nintendo_Voice_Chat__Show_and_Tell_With_Our_Favorite_Nintendo_Treasures.mp3" onclick="emulator();" type="audio/mpegURL">
     </audio></div>
-
+<div class="align-center" >
+        <textarea id="id_textArea" class="align-left" readonly="readonly" wrap="off"></textarea>
+    </div>
 
     <script type="text/javascript">
         app.initialize();

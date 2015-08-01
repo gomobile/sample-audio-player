@@ -17,6 +17,8 @@ body {
     background-image: -o-linear-gradient(top, #b7b7b7, #cccccc);
     background-image: linear-gradient(to bottom, #b7b7b7, #cccccc);
     height: 100%;
+    width: auto;
+    padding: 20px;
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -50,6 +52,7 @@ textarea {
     font: normal 14px/120% "Intel Clear W Italic", Arial, sans-serif;
     color: rgb(51, 51, 51);
     text-align: left;
+    
 }
 
 .align-center {
