@@ -1,4 +1,4 @@
-Intel® HTML5 Samples License Terms and Conditions
+Intel® XDK Samples License Terms and Conditions
 =================================================
 
 Copyright © 2012-2015, Intel Corporation. All rights reserved.
