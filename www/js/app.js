@@ -28,22 +28,13 @@ function myEventHandler() {
     alert(str);
 }
 
-function emulator() {
-    if (window.tinyHippos) {
+function emulator() {    
         alert("This plays an mp3 file. The emulator only suuports wav and ogg files. Please test on app preview or built app.");
-    }
 }
 
 function thirdPartyEmulator() {
-    if (window.tinyHippos) {
-        alert("This feature uses a third party audio plugin. Third party plugins are not supported on emulator or app preview. Please build app to test.");
-    }
+    alert("This feature uses a third party audio plugin. Third party plugins are not supported on emulator or app preview. Please build app to test.");
 }
-
-
-
-
-
 
 //Native audio playback plugin methods
 var app = {
@@ -63,39 +54,72 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function () {
-        app.receivedEvent('deviceready');
         console.log('deviceready');
+        app.receivedEvent('deviceready');
+
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
+        "use strict";
+        var fName = "receivedEvent():";
+        console.log(fName, "entry");
+        console.log("Preloaded low latency audio");
+        try {
+            if (window.plugins && window.plugins.LowLatencyAudio) {
+                window.plugins.LowLatencyAudio.preloadFX('sounds/boot-sound.wav', 'sounds/boot-sound.wav', function (msg) {}, function (msg) {
+                    alert('Error: ' + msg);
+                });
+                window.plugins.LowLatencyAudio.preloadFX('sounds/sound-bowl.wav', 'sounds/sound-bowl.wav', function (msg) {}, function (msg) {
+                    alert('Error: ' + msg);
+                });
+            }
 
-        if (window.plugins && window.plugins.LowLatencyAudio) {
-            window.plugins.LowLatencyAudio.preloadFX('sounds/boot-sound.wav', 'sounds/boot-sound.wav', function (msg) {}, function (msg) {
-                alert('Error: ' + msg);
-            });
-            window.plugins.LowLatencyAudio.preloadFX('sounds/sound-bowl.wav', 'sounds/sound-bowl.wav', function (msg) {}, function (msg) {
-                alert('Error: ' + msg);
-            });
+        } catch (e) {
+            console.log(fName, "catch, failure");
         }
+
+        console.log(fName, "exit");
 
     },
 
     play: function (aud) {
-        //Emulator alert
-        thirdPartyEmulator();
+        "use strict";
+        var fName = "app.play():";
+        console.log(fName, "entry");
+        try {
+            if (window.tinyHippos) {
+                thirdPartyEmulator();
+                console.log(fName, "emulator alert");
+            } else {
 
-        document.getElementById(aud).className = 'audio activated';
-        window.plugins.LowLatencyAudio.play('sounds/' + aud + '.wav');
+                window.plugins.LowLatencyAudio.play('sounds/' + aud + '.wav');
+            }
+        } catch (e) {
+            console.log(fName, "catch, failure");
+        }
+
+        console.log(fName, "exit");
     },
 
-    playConcurr: function (aud1, aud2) {
-    //Emulator alert
-    thirdPartyEmulator();
 
-//    document.getElementById(aud).className = 'audio activated';
-    window.plugins.LowLatencyAudio.play('sounds/' + aud1 + '.wav');
-        window.plugins.LowLatencyAudio.play('sounds/' + aud2 + '.wav');
-},
+    playConcurr: function (aud1, aud2) {
+        "use strict";
+        var fName = "app.playConcurr():";
+        console.log(fName, "entry");
+        try {
+            if (window.tinyHippos) {
+                thirdPartyEmulator();
+                console.log(fName, "emulator alert");
+            } else {
+                window.plugins.LowLatencyAudio.play('sounds/' + aud1 + '.wav');
+                window.plugins.LowLatencyAudio.play('sounds/' + aud2 + '.wav');
+            }
+        } catch (e) {
+            console.log(fName, "catch, failure");
+        }
+
+        console.log(fName, "exit");
+    },
 };
 
 
@@ -107,62 +131,93 @@ var my_media = null;
 var mediaTimer = null;
 
 // Play audio
-function playAudio(src) {
-    //Emulator alert
-    emulator();
+function playCordovaAudio(src) {
+    "use strict";
+    var fName = "playCordovaAudio():";
+    console.log(fName, "entry");
+    try {
+        if (window.tinyHippos) {
+            emulator();
+            console.log(fName, "emulator alert");
+        } else {
+            // Create Media object from src
+            my_media = new Media(src, onSuccess, onError);
 
-    // Create Media object from src
-    my_media = new Media(src, onSuccess, onError);
+            // Play audio
+            my_media.play();
 
-    // Play audio
-    my_media.play();
-
-    // Update my_media position every second
-    if (mediaTimer === null) {
-        mediaTimer = setInterval(function () {
-            // get my_media position
-            my_media.getCurrentPosition(
-                // success callback
-                function (position) {
-                    if (position > -1) {
-                        setAudioPosition((position) + " sec");
-                    }
-                },
-                // error callback
-                function (e) {
-                    console.log("Error getting pos=" + e);
-                    setAudioPosition("Error: " + e);
-                }
-            );
-        }, 1000);
+            // Update my_media position every second
+//            if (mediaTimer === null) {
+//                mediaTimer = setInterval(function () {
+//                    // get my_media position
+//                    my_media.getCurrentPosition(
+//                        // success callback
+//                        function (position) {
+//                            if (position > -1) {
+//                                setAudioPosition((position) + " sec");
+//                            }
+//                        },
+//                        // error callback
+//                        function (e) {
+//                            console.log("Error getting pos=" + e);
+//                            setAudioPosition("Error: " + e);
+//                        }
+//                    );
+//                }, 1000);
+//            }
+        }
+    } catch (e) {
+        console.log(fName, "catch, failure");
     }
+
+    console.log(fName, "exit");
 }
 
 // Pause audio
-function pauseAudio() {
-    //Emulator alert
-    emulator();
-
-    if (my_media) {
-        my_media.pause();
+function pauseCordovaAudio() {
+      "use strict";
+    var fName = "pauseCordovaAudio():";
+    console.log(fName, "entry");
+    try {
+        if (window.tinyHippos) {
+            emulator();
+            console.log(fName, "emulator alert");
+        } else {
+          if (my_media) {
+                my_media.pause();
+            }
+        }
+    } catch (e) {
+        console.log(fName, "catch, failure");
     }
+
+    console.log(fName, "exit");
 }
 
 // Stop audio
-function stopAudio() {
-    //Emulator alert
-    emulator();
-
-    if (my_media) {
-        my_media.stop();
+function stopCordovaAudio() {
+    "use strict";
+    var fName = "stopCordovaAudio():";
+    console.log(fName, "entry");
+    try {
+        if (window.tinyHippos) {
+            emulator();
+            console.log(fName, "emulator alert");
+        } else {
+          if (my_media) {
+                my_media.pause();
+            }
+        }
+    } catch (e) {
+        console.log(fName, "catch, failure");
     }
-    clearInterval(mediaTimer);
-    mediaTimer = null;
+
+    console.log(fName, "exit");
 }
 
 // onSuccess Callback
 function onSuccess() {
-    console.log("playAudio():Audio Success");
+    console.log("playCordovaAudio():Audio Success");
 }
 
 // onError Callback 
@@ -172,9 +227,9 @@ function onError(error) {
 }
 
 // Set audio position
-function setAudioPosition(position) {
-    document.getElementById('audio_position').innerHTML = position;
-}
+//function setAudioPosition(position) {
+//    document.getElementById('audio_position').innerHTML = position;
+//}
 
 
 // ...additional event handlers here...
