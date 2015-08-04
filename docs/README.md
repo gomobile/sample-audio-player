@@ -40,5 +40,5 @@ Each button click is bound with methods that encapsulate the functionality of th
 
 
 
-Due to the limited mobile platforms supported by the [com.google.admob](http://plugins.cordova.io/#/package/com.google.admob) Cordova plug-in, these sample applications have been tested on iOS and Android devices.
+These sample applications have been tested on iOS and Android devices.
 
