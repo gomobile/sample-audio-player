@@ -3,26 +3,17 @@
    "appName" : "demo.audioapp",
    "tooltip" : "This sample application demonstrates how to play local and stream online audio files using the Cordova* media plugin and a low latency audio plugin that also demonstrates playing two music files concurrently.",
    "title" : "Audio Player App",
-   "type" : "appdesigner",
    "iconUrl" : "",
    "abbr" : "AudioPlayer App",
    "appPreview" : true,
    "repoName" : "sample-audio-player",
    "articleUrl" : "https://github.com/gomobile/sample-audio-player/blob/master/docs/README.md",
    "highlights" : [
-      "App Designer",
-      "App Framework",
-      "Apache Cordova API",
-      "Ads",
-      "Monetize"
+      "Apache Cordova API"
    ],
    "projectTypeName" : "com.intel.xdk.projecttype.jsapp",
    "keywords" : [
-      "App Designer",
-      "App Framework",
-      "Apache Cordova API",
-      "Ads",
-      "Monetize"
+      "Apache Cordova API"
    ],
    "visible" : true,
    "screenshotUrl" : "",
