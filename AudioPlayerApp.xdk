@@ -50,6 +50,15 @@
                 "sourceLocation": ""
             },
             {
+                "id": "org.apache.cordova.file",
+                "version": "?",
+                "selectedState": "Included",
+                "data": {},
+                "paramvals": {},
+                "dependsOn": [],
+                "dependedBy": []           
+            },
+            {
                 "id": "org.apache.cordova.media",
                 "version": "?",
                 "selectedState": "Included",
