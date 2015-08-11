@@ -25,7 +25,7 @@ function myEventHandler() {
         str = "Bad device ready, or none available because we're running in a browser.";
     }
 
-    alert(str);
+    console.log(str);
 }
 
 function emulator() {    
