@@ -18,7 +18,7 @@
         "cordovaPluginsDirectory": "plugins",
         "cordovaPlugins": [
             {
-                "id": "cordova-plugin-device",
+                "id": "org.apache.cordova.device",
                 "version": "?",
                 "selectedState": "Included",
                 "data": {},
@@ -27,7 +27,7 @@
                 "dependedBy": []
             },
             {
-                "id": "cordova-plugin-splashscreen",
+                "id": "org.apache.cordova.splashscreen",
                 "version": "?",
                 "selectedState": "Included",
                 "data": {},
@@ -50,16 +50,16 @@
                 "sourceLocation": ""
             },
             {
-                "id": "cordova-plugin-file",
+                "id": "org.apache.cordova.file",
                 "version": "?",
                 "selectedState": "Included",
                 "data": {},
                 "paramvals": {},
                 "dependsOn": [],
-                "dependedBy": []
+                "dependedBy": []           
             },
             {
-                "id": "cordova-plugin-media",
+                "id": "org.apache.cordova.media",
                 "version": "?",
                 "selectedState": "Included",
                 "data": {},
