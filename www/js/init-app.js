@@ -67,8 +67,8 @@ app.initEvents = function () {
     else // else, assume touch events available
         evt = "touchend"; // not optimum, but works
 
-    el = document.getElementById("boot-sound");
-    el.addEventListener(evt, myEventHandler, false);
+    myEventHandler();
+
 
     // NOTE: ...you can put other miscellaneous init stuff in this function...
     // NOTE: ...and add whatever else you want to do now that the app has started...
@@ -76,6 +76,7 @@ app.initEvents = function () {
 
     app.initDebug(); // just for debug, not required; keep it if you want it or get rid of it
     app.hideSplashScreen(); // after init is good time to remove splash screen; using a splash screen is optional
+    app.initialize();
 
     // app initialization is done
     // app event handlers are ready

@@ -28,8 +28,8 @@ function myEventHandler() {
     console.log(str);
 }
 
-function emulator() {    
-        alert("This plays an mp3 file. The emulator only suuports wav and ogg files. Please test on app preview or built app.");
+function emulator() {
+    alert("This plays an mp3 file. The emulator only suuports wav and ogg files. Please test on app preview or built app.");
 }
 
 function thirdPartyEmulator() {
@@ -63,23 +63,30 @@ var app = {
         "use strict";
         var fName = "receivedEvent():";
         console.log(fName, "entry");
-        console.log("Preloaded low latency audio");
-        try {
-            if (window.plugins && window.plugins.LowLatencyAudio) {
-                window.plugins.LowLatencyAudio.preloadFX('sounds/boot-sound.wav', 'sounds/boot-sound.wav', function (msg) {}, function (msg) {
-                    alert('Error: ' + msg);
-                });
-                window.plugins.LowLatencyAudio.preloadFX('sounds/sound-bowl.wav', 'sounds/sound-bowl.wav', function (msg) {}, function (msg) {
-                    alert('Error: ' + msg);
-                });
-            }
 
+        try {
+            if (window.plugins && window.plugins.NativeAudio) {
+
+                var items = ['boot-sound', 'sound-bowl'];
+                for (var i = 0; i < items.length; i++) {
+                    var asset = 'sounds/' + items[i] + '.wav';
+                    console.log("Preloading ", asset);
+                    window.plugins.NativeAudio.preloadSimple(items[i],
+                        asset,
+                        function (msg) {
+                            console.info(msg);
+                        },
+                        function (msg) {
+                            console.error('Error: ' + msg);
+                        });
+                }
+            }
+            console.log("Preloaded low latency audio");
         } catch (e) {
             console.log(fName, "catch, failure");
         }
 
         console.log(fName, "exit");
-
     },
 
     play: function (aud) {
@@ -91,8 +98,8 @@ var app = {
                 thirdPartyEmulator();
                 console.log(fName, "emulator alert");
             } else {
-
-                window.plugins.LowLatencyAudio.play('sounds/' + aud + '.wav');
+                window.plugins.NativeAudio.play(aud);
+                //                window.plugins.LowLatencyAudio.play('sounds/' + aud + '.wav');
             }
         } catch (e) {
             console.log(fName, "catch, failure");
@@ -111,8 +118,8 @@ var app = {
                 thirdPartyEmulator();
                 console.log(fName, "emulator alert");
             } else {
-                window.plugins.LowLatencyAudio.play('sounds/' + aud1 + '.wav');
-                window.plugins.LowLatencyAudio.play('sounds/' + aud2 + '.wav');
+                window.plugins.NativeAudio.play(aud1);
+                window.plugins.NativeAudio.play(aud2);
             }
         } catch (e) {
             console.log(fName, "catch, failure");
@@ -147,24 +154,24 @@ function playCordovaAudio(src) {
             my_media.play();
 
             // Update my_media position every second
-//            if (mediaTimer === null) {
-//                mediaTimer = setInterval(function () {
-//                    // get my_media position
-//                    my_media.getCurrentPosition(
-//                        // success callback
-//                        function (position) {
-//                            if (position > -1) {
-//                                setAudioPosition((position) + " sec");
-//                            }
-//                        },
-//                        // error callback
-//                        function (e) {
-//                            console.log("Error getting pos=" + e);
-//                            setAudioPosition("Error: " + e);
-//                        }
-//                    );
-//                }, 1000);
-//            }
+            //            if (mediaTimer === null) {
+            //                mediaTimer = setInterval(function () {
+            //                    // get my_media position
+            //                    my_media.getCurrentPosition(
+            //                        // success callback
+            //                        function (position) {
+            //                            if (position > -1) {
+            //                                setAudioPosition((position) + " sec");
+            //                            }
+            //                        },
+            //                        // error callback
+            //                        function (e) {
+            //                            console.log("Error getting pos=" + e);
+            //                            setAudioPosition("Error: " + e);
+            //                        }
+            //                    );
+            //                }, 1000);
+            //            }
         }
     } catch (e) {
         console.log(fName, "catch, failure");
@@ -175,7 +182,7 @@ function playCordovaAudio(src) {
 
 // Pause audio
 function pauseCordovaAudio() {
-      "use strict";
+    "use strict";
     var fName = "pauseCordovaAudio():";
     console.log(fName, "entry");
     try {
@@ -183,7 +190,7 @@ function pauseCordovaAudio() {
             emulator();
             console.log(fName, "emulator alert");
         } else {
-          if (my_media) {
+            if (my_media) {
                 my_media.pause();
             }
         }
@@ -204,7 +211,7 @@ function stopCordovaAudio() {
             emulator();
             console.log(fName, "emulator alert");
         } else {
-          if (my_media) {
+            if (my_media) {
                 my_media.pause();
             }
         }
