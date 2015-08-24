@@ -22,11 +22,11 @@ The app shows how to use the following API methods:
 - media.pause() : Pause playback.
 - media.stop() : Stop playback.
 
-[Low Latency Audio Plugin (com.rjfun.cordova.plugin.lowlatencyaudio)](https://github.com/floatinghotpot/testaudio/tree/master/plugins/com.rjfun.cordova.plugin.lowlatencyaudio "Plugin Documentation")
+[Cordova Native Audio Plugin (cordova-plugin-nativeaudio)](https://github.com/floatinghotpot/cordova-plugin-nativeaudio "Plugin Documentation")
 
 
-- LowLatencyAudio.preloadFX(id, assetPath, success, fail) : loads audio file into memory,
-- LowLatencyAudio.play(id, success, fail) : Plays audio asset.
+- preloadSimple: function ( id, assetPath, successCallback, errorCallback) : loads audio file into memory,
+- play: function (id, successCallback, errorCallback, completeCallback) : Plays audio asset.
 
 Each button click is bound with methods that encapsulate the functionality of the plugin or API. These methods are defined in `app.js`.
 

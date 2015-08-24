@@ -9,7 +9,7 @@ This sample is part of the Intel® XDK.
 Download the Intel® XDK at [http://software.intel.com/en-us/html5](http://software.intel.com/en-us/html5). With the Audio Player sample you can play audio with Apache Cordova Media API, Cordova Low Latency Audio Plugin for iOS and Android and the HTML5 Audio tag.
 
 
-The Audio Player App demonstrates how to play local and stream online audio files using the Cordova* media plugin. It also demonstrates use of the [Cordova Low Latency Audio Plugin for iOS and Android](https://github.com/floatinghotpot/testaudio/tree/master/plugins/com.rjfun.cordova.plugin.lowlatencyaudio) to demonstrates playing two music files concurrently. To see the technical details of the sample, 
+The Audio Player App demonstrates how to play local and stream online audio files using the Cordova* media plugin. It also demonstrates use of the [Cordova Native Audio Plugin](https://github.com/floatinghotpot/cordova-plugin-nativeaudio) to demonstrates playing two music files concurrently. To see the technical details of the sample, 
 please visit the **[included tutorial][]**. 
 [included tutorial]: docs/README.md
 
