@@ -18,6 +18,23 @@
         "cordovaPluginsDirectory": "plugins",
         "cordovaPlugins": [
             {
+                "id": "org.apache.cordova.statusbar",
+                "name": "StatusBar",
+                "version": "?",
+                "originType": "cordova.io",
+                "origin": "org.apache.cordova.statusbar",
+                "gitref": "",
+                "paramvals": {},
+                "selectedState": "Included",
+                "dependsOn": [],
+                "topLevel": true,
+                "cordovaVersion": "?",
+                "permissions": {},
+                "description": "Cordova StatusBar Plugin",
+                "data": {},
+                "dependedBy": []
+             },
+            {
                 "id": "cordova-plugin-device",
                 "version": "?",
                 "selectedState": "Included",
@@ -31,7 +48,7 @@
                 "topLevel": true,
                 "gitref": "",
                 "name": "Device",
-                "cordovaVersion": ">=3.0",
+                "cordovaVersion": "?",
                 "description": "Cordova Device Plugin"
             },
             {
@@ -48,7 +65,7 @@
                 "topLevel": true,
                 "gitref": "",
                 "name": "Splashscreen",
-                "cordovaVersion": ">=3.0",
+                "cordovaVersion": "?",
                 "description": "Cordova Splashscreen Plugin"
             },
             {
@@ -64,17 +81,11 @@
                 "origin": "https://github.com/floatinghotpot/cordova-plugin-nativeaudio.git",
                 "originType": "repo",
                 "sourceLocation": "",
-                "permissions": {
-                    "android:name": [
-                        "android.permission.MODIFY_AUDIO_SETTINGS",
-                        "android.permission.WRITE_EXTERNAL_STORAGE",
-                        "android.permission.READ_PHONE_STATE"
-                    ]
-                },
+                "permissions": {},
                 "gitref": "",
                 "subdir": ".",
                 "topLevel": true,
-                "cordovaVersion": ">=3.5",
+                "cordovaVersion": "?",
                 "description": "Cordova/PhoneGap Plugin for low latency Native Audio Playback, must have for HTML5 games",
                 "author": "Andrew Trice, Raymond Xie, SidneyS, etc."
             },
@@ -90,15 +101,11 @@
                 ],
                 "originType": "cordova.io",
                 "origin": "cordova-plugin-file",
-                "permissions": {
-                    "android:name": [
-                        "android.permission.WRITE_EXTERNAL_STORAGE"
-                    ]
-                },
+                "permissions": {},
                 "topLevel": true,
                 "gitref": "",
                 "name": "File",
-                "cordovaVersion": ">=3.0",
+                "cordovaVersion": "?",
                 "description": "Cordova File Plugin"
             },
             {
@@ -113,18 +120,11 @@
                 "dependedBy": [],
                 "originType": "cordova.io",
                 "origin": "cordova-plugin-media",
-                "permissions": {
-                    "android:name": [
-                        "android.permission.RECORD_AUDIO",
-                        "android.permission.MODIFY_AUDIO_SETTINGS",
-                        "android.permission.WRITE_EXTERNAL_STORAGE",
-                        "android.permission.READ_PHONE_STATE"
-                    ]
-                },
+                "permissions": {},
                 "topLevel": true,
                 "gitref": "",
                 "name": "Media",
-                "cordovaVersion": ">=3.0",
+                "cordovaVersion": "?",
                 "description": "Cordova Media Plugin"
             }
         ],
@@ -142,14 +142,14 @@
                 "appName_": "Audio-Player-App",
                 "appID_": "xdk.intel.demo.audioplayer",
                 "appAccess_": {
-                  "mode": "legacy",
-                  "network": [
-                    "http://audio.ibeat.org/*",
-                    "http://traffic.libsyn.com/*",
-                    "http://debug-software.intel.com/*"
-                  ],
-                  "intents": [],
-                  "navigation": []
+                    "mode": "legacy",
+                    "network": [
+                        "http://audio.ibeat.org/*",
+                        "http://traffic.libsyn.com/*",
+                        "http://debug-software.intel.com/*"
+                    ],
+                    "intents": [],
+                    "navigation": []
                 },
                 "icons_": [],
                 "splashes_": [],
@@ -175,14 +175,14 @@
                 "appName_": "Audio-Player-App",
                 "appID_": "xdk.intel.demo.audioplayer",
                 "appAccess_": {
-                  "mode": "legacy",
-                  "network": [
-                    "http://audio.ibeat.org/*",
-                    "http://traffic.libsyn.com/*",
-                    "http://debug-software.intel.com/*"
-                  ],
-                  "intents": [],
-                  "navigation": []
+                    "mode": "legacy",
+                    "network": [
+                        "http://audio.ibeat.org/*",
+                        "http://traffic.libsyn.com/*",
+                        "http://debug-software.intel.com/*"
+                    ],
+                    "intents": [],
+                    "navigation": []
                 },
                 "icons_": [],
                 "splashes_": [],
@@ -207,14 +207,14 @@
                 "appName_": "Audio-Player-App",
                 "appID_": "xdk.intel.demo.audioplayer",
                 "appAccess_": {
-                  "mode": "legacy",
-                  "network": [
-                    "http://audio.ibeat.org/*",
-                    "http://traffic.libsyn.com/*",
-                    "http://debug-software.intel.com/*"
-                  ],
-                  "intents": [],
-                  "navigation": []
+                    "mode": "legacy",
+                    "network": [
+                        "http://audio.ibeat.org/*",
+                        "http://traffic.libsyn.com/*",
+                        "http://debug-software.intel.com/*"
+                    ],
+                    "intents": [],
+                    "navigation": []
                 },
                 "icons_": [],
                 "splashes_": [],
@@ -239,14 +239,14 @@
                 "appName_": "Audio-Player-App",
                 "appID_": "xdk.intel.demo.audioplayer",
                 "appAccess_": {
-                  "mode": "legacy",
-                  "network": [
-                    "http://audio.ibeat.org/*",
-                    "http://traffic.libsyn.com/*",
-                    "http://debug-software.intel.com/*"
-                  ],
-                  "intents": [],
-                  "navigation": []
+                    "mode": "legacy",
+                    "network": [
+                        "http://audio.ibeat.org/*",
+                        "http://traffic.libsyn.com/*",
+                        "http://debug-software.intel.com/*"
+                    ],
+                    "intents": [],
+                    "navigation": []
                 },
                 "icons_": [],
                 "splashes_": [],
@@ -267,14 +267,14 @@
                 "appName_": "Audio-Player-App",
                 "appID_": "not.yet.specified",
                 "appAccess_": {
-                  "mode": "legacy",
-                  "network": [
-                    "http://audio.ibeat.org/*",
-                    "http://traffic.libsyn.com/*",
-                    "http://debug-software.intel.com/*"
-                  ],
-                  "intents": [],
-                  "navigation": []
+                    "mode": "legacy",
+                    "network": [
+                        "http://audio.ibeat.org/*",
+                        "http://traffic.libsyn.com/*",
+                        "http://debug-software.intel.com/*"
+                    ],
+                    "intents": [],
+                    "navigation": []
                 },
                 "icons_": [],
                 "splashes_": [],
@@ -292,14 +292,14 @@
                 "appName_": "Audio-Player-App",
                 "appID_": "not.yet.specified",
                 "appAccess_": {
-                  "mode": "legacy",
-                  "network": [
-                    "http://audio.ibeat.org/*",
-                    "http://traffic.libsyn.com/*",
-                    "http://debug-software.intel.com/*"
-                  ],
-                  "intents": [],
-                  "navigation": []
+                    "mode": "legacy",
+                    "network": [
+                        "http://audio.ibeat.org/*",
+                        "http://traffic.libsyn.com/*",
+                        "http://debug-software.intel.com/*"
+                    ],
+                    "intents": [],
+                    "navigation": []
                 },
                 "icons_": [],
                 "splashes_": [],
@@ -317,14 +317,14 @@
                 "appName_": "Audio-Player-App",
                 "appID_": "not.yet.specified",
                 "appAccess_": {
-                  "mode": "legacy",
-                  "network": [
-                    "http://audio.ibeat.org/*",
-                    "http://traffic.libsyn.com/*",
-                    "http://debug-software.intel.com/*"
-                  ],
-                  "intents": [],
-                  "navigation": []
+                    "mode": "legacy",
+                    "network": [
+                        "http://audio.ibeat.org/*",
+                        "http://traffic.libsyn.com/*",
+                        "http://debug-software.intel.com/*"
+                    ],
+                    "intents": [],
+                    "navigation": []
                 },
                 "icons_": [],
                 "splashes_": [],
@@ -342,14 +342,14 @@
                 "appName_": "Audio-Player-App",
                 "appID_": "not.yet.specified",
                 "appAccess_": {
-                  "mode": "legacy",
-                  "network": [
-                    "http://audio.ibeat.org/*",
-                    "http://traffic.libsyn.com/*",
-                    "http://debug-software.intel.com/*"
-                  ],
-                  "intents": [],
-                  "navigation": []
+                    "mode": "legacy",
+                    "network": [
+                        "http://audio.ibeat.org/*",
+                        "http://traffic.libsyn.com/*",
+                        "http://debug-software.intel.com/*"
+                    ],
+                    "intents": [],
+                    "navigation": []
                 },
                 "icons_": [],
                 "splashes_": [],
@@ -367,14 +367,14 @@
                 "appName_": "Audio-Player-App",
                 "appID_": "not.yet.specified",
                 "appAccess_": {
-                  "mode": "legacy",
-                  "network": [
-                    "http://audio.ibeat.org/*",
-                    "http://traffic.libsyn.com/*",
-                    "http://debug-software.intel.com/*"
-                  ],
-                  "intents": [],
-                  "navigation": []
+                    "mode": "legacy",
+                    "network": [
+                        "http://audio.ibeat.org/*",
+                        "http://traffic.libsyn.com/*",
+                        "http://debug-software.intel.com/*"
+                    ],
+                    "intents": [],
+                    "navigation": []
                 },
                 "icons_": [],
                 "splashes_": [],
