@@ -146,7 +146,7 @@
                     "network": [
                         "http://audio.ibeat.org/*",
                         "http://traffic.libsyn.com/*",
-                        "http://debug-software.intel.com/*"
+                        "http://debug-software.intel.com/*", "https://debug-software.intel.com/*"
                     ],
                     "intents": [],
                     "navigation": []
@@ -179,7 +179,7 @@
                     "network": [
                         "http://audio.ibeat.org/*",
                         "http://traffic.libsyn.com/*",
-                        "http://debug-software.intel.com/*"
+                        "http://debug-software.intel.com/*", "https://debug-software.intel.com/*"
                     ],
                     "intents": [],
                     "navigation": []
@@ -211,7 +211,8 @@
                     "network": [
                         "http://audio.ibeat.org/*",
                         "http://traffic.libsyn.com/*",
-                        "http://debug-software.intel.com/*"
+                        "http://debug-software.intel.com/*",
+                        "https://debug-software.intel.com/*"
                     ],
                     "intents": [],
                     "navigation": []
@@ -243,7 +244,8 @@
                     "network": [
                         "http://audio.ibeat.org/*",
                         "http://traffic.libsyn.com/*",
-                        "http://debug-software.intel.com/*"
+                        "http://debug-software.intel.com/*", 
+                        "https://debug-software.intel.com/*"
                     ],
                     "intents": [],
                     "navigation": []
@@ -271,7 +273,8 @@
                     "network": [
                         "http://audio.ibeat.org/*",
                         "http://traffic.libsyn.com/*",
-                        "http://debug-software.intel.com/*"
+                        "http://debug-software.intel.com/*", 
+                        "https://debug-software.intel.com/*"
                     ],
                     "intents": [],
                     "navigation": []
@@ -296,7 +299,8 @@
                     "network": [
                         "http://audio.ibeat.org/*",
                         "http://traffic.libsyn.com/*",
-                        "http://debug-software.intel.com/*"
+                        "http://debug-software.intel.com/*", 
+                        "https://debug-software.intel.com/*"
                     ],
                     "intents": [],
                     "navigation": []
@@ -321,7 +325,8 @@
                     "network": [
                         "http://audio.ibeat.org/*",
                         "http://traffic.libsyn.com/*",
-                        "http://debug-software.intel.com/*"
+                        "http://debug-software.intel.com/*", 
+                        "https://debug-software.intel.com/*"
                     ],
                     "intents": [],
                     "navigation": []
@@ -346,7 +351,8 @@
                     "network": [
                         "http://audio.ibeat.org/*",
                         "http://traffic.libsyn.com/*",
-                        "http://debug-software.intel.com/*"
+                        "http://debug-software.intel.com/*", 
+                        "https://debug-software.intel.com/*"
                     ],
                     "intents": [],
                     "navigation": []
@@ -371,7 +377,8 @@
                     "network": [
                         "http://audio.ibeat.org/*",
                         "http://traffic.libsyn.com/*",
-                        "http://debug-software.intel.com/*"
+                        "http://debug-software.intel.com/*", 
+                        "https://debug-software.intel.com/*"
                     ],
                     "intents": [],
                     "navigation": []
