@@ -142,7 +142,7 @@
                 "appName_": "Audio-Player-App",
                 "appID_": "xdk.intel.demo.audioplayer",
                 "appAccess_": {
-                    "mode": "legacy",
+                    "mode": "whitelist",
                     "network": [
                         "http://audio.ibeat.org/*",
                         "http://traffic.libsyn.com/*",
