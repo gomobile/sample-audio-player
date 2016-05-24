@@ -3,10 +3,10 @@
 <!--
   * Please see the included README.md file for license terms and conditions.
   -->
-
 <head>
-    <title>Blank Cordova Mobile App Template</title>
+    <title>Audio Player</title>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: blob: filesystem: ws: gap: cdvfile: https://ssl.gstatic.com http://*.ibeat.org http://*.libsyn.com http://debug-software.intel.com ; style-src 'self' 'unsafe-inline' ; ">
 
     <!-- see http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag -->
     <!-- <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1"> -->
@@ -15,87 +15,80 @@
     <style>
         /* following two viewport lines are equivalent to meta viewport statement above, and is needed for Windows */
         /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
-        
-        @-ms-viewport {width: 100vw; min-zoom: 100%; zoom: 100%;}        
-        @viewport {width: 100vw; min-zoom: 100% zoom: 100%;}        
-        @-ms-viewport {user-zoom: fixed;min-zoom: 100%;}        
-        @viewport {user-zoom: fixed; min-zoom: 100%;}
-        /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+        @-ms-viewport {width: 100vw; min-zoom: 100%; zoom: 100%;}               @viewport {width: 100vw; min-zoom: 100% zoom: 100%;}
+        @-ms-viewport {user-zoom: fixed;min-zoom: 100%;}                        @viewport {user-zoom: fixed; min-zoom: 100%;}
+/*        @-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
     </style>
-
-    <!-- See explanation at the bottom of this file for info regarding placement of JS libraries. -->
-    <!-- These library references (below) are just examples to give you the general idea... -->
-    <!-- <script src="lib/mc/hammer.js"></script> -->
-    <!-- <script src="lib/ft/fastclick.js"></script> -->
-    <!-- <script src="lib/jq/jquery.js"></script> -->
-
     <link rel="stylesheet" href="css/app.css">
 </head>
 
-
 <body>
-
     <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
     <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work below -->
     <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
 
-    <!-- See <head> section above for additional JS libraries loaded as part of this application. -->
-
-    <script src="cordova.js"></script>
-    <!-- "Phantom" cordova.js required for projects that use plugins -->
-
-    <script src="js/app.js"></script>
-    <!-- for your event code, see README and file comments for details -->
-    <script src="js/init-app.js"></script>
-    <!-- for your init code, see README and file comments for details -->
-    <script src="xdk/init-dev.js"></script>
-    <!-- normalizes device and document ready events, see file for details -->
-    <script src="js/util.js"></script> 
+    <script src="cordova.js"></script>          <!-- "Phantom" cordova.js required for projects that use plugins -->
+    <script src="js/util.js"></script>          <!-- collection of utility functions -->
+    <script src="js/app.js"></script>           <!-- for your event code, see README and file comments for details -->
+    <script src="js/init-app.js"></script>      <!-- for your init code, see README and file comments for details -->
+    <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see file for details -->
 
     <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
     <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work above -->
     <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
+
     <h1>Audio Player</h1>
 
-    <h2>Using Low Latency Audio Plugin</h2>
-    <!--    Third party plugins can only be tested when the app is built-->
+<!-- Third party plugins can only be tested when the app is built -->
+    <h2>Local Using Low-Latency Audio Plugin</h2>
     <div>
-    <button type="button" id="boot-sound" class="aud" onclick="app.play('boot-sound');">Boot Sound</button>
-    <button type="button" id="sound-bowl" class="aud" onclick="app.play('sound-bowl');">Bowl Sound</button>
-        <button type="button" onclick="app.playConcurr('boot-sound', 'sound-bowl');">Play Concurrent</button></div>
-        </div>
-
-
-    <h2>Using Cordova Media API</h2>
-    <!--    Cordova Media API is compatible with the emulator (when using wav and ogg files) and app preview-->
-    <div>
-    <button type="button" onclick="playCordovaAudio('http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3');">Play</button>
-<!--    <button type="button" onclick="pauseCordovaAudio();">Pause</button>-->
-    <button type="button" onclick="stopCordovaAudio();">Stop</button></div>
-    
-
-
-    <h2>Local audio using HTML5 Audio</h2>
-<!--    <p>Musical Compilation</p>-->
-    <!--    The HTML5 <audio> tag does not work well in the webviews on many devices. -->
-    <div>
-    <audio controls>
-        <source src="sounds/xylophones-bass-drums-and-snare-drums-ambience.wav" type="audio/wav">
-    </audio>
-</div>
-
-    <h2>Online audio using HTML5 Audio</h2>
-<!--    <p>IGN Nintendo Voice Chat Podcast</p>-->
-    <!--    The HTML5 <audio> tag does not work well in the webviews on many devices. -->
-    <div>
-    <audio controls>
-        <source src="http://traffic.libsyn.com/ignwii/Nintendo_Voice_Chat__Show_and_Tell_With_Our_Favorite_Nintendo_Treasures.mp3" onclick="emulator();" type="audio/mpegURL">
-    </audio></div>
-<div class="align-center" >
-        <textarea id="id_textArea" class="align-left" readonly="readonly" wrap="off"></textarea>
+        <button type="button" id="id_boot-sound" data-sound="boot-sound">Boot Sound</button>
+        <button type="button" id="id_sound-bowl" data-sound="sound-bowl">Bowl Sound</button>
+        <button type="button" id="id_boot-bowl"  data-sound1="boot-sound" data-sound2="sound-bowl">Play Concurrent</button>
     </div>
 
+<!-- Cordova Media API is compatible with the emulator (when using wav and ogg files) and App Preview -->
+    <h2>Local Using Cordova Media Plugin</h2>
+    <div>
+        <button type="button" id="id_cordova-media-local-start" data-sound="sounds/xylophones-bass-drums-and-snare-drums-ambience.wav">Play</button>
+        <button type="button" id="id_cordova-media-local-pause">Pause</button>
+    </div>
+
+    <h2>Remote Using Cordova Media Plugin</h2>
+    <div>
+        <button type="button" id="id_cordova-media-url-start" data-sound="http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3">Play</button>
+        <button type="button" id="id_cordova-media-url-stop">Stop</button>
+    </div>
+
+<!-- The HTML5 <audio> tag does not work well in the webviews on many devices. -->
+    <div>
+        <h2>Local Using &lt;audio&gt; Tag (indirect)</h2>
+        <button type="button" id="id_html5-audio-local" data-id="id_audio-local">Play</button>
+        <button type="button" id="id_html5-audio-local-pause" data-id="id_audio-local">Pause</button>
+        <button type="button" id="id_html5-audio-local-restart" data-id="id_audio-local">Restart</button>
+        <h2>Local Using &lt;audio&gt; Tag (direct)</h2>
+        <audio id="id_audio-local" controls="controls" >
+            <source src="sounds/xylophones-bass-drums-and-snare-drums-ambience.wav" type="audio/wav" />
+        </audio>
+    </div>
+
+<!-- The HTML5 <audio> tag does not work well in the webviews on many devices. -->
+    <div>
+        <h2>Remote Using &lt;audio&gt; Tag (indirect)</h2>
+        <button type="button" id="id_html5-audio-url" data-id="id_audio-url">Play</button>
+        <button type="button" id="id_html5-audio-url-pause" data-id="id_audio-url">Pause</button>
+        <button type="button" id="id_html5-audio-url-restart" data-id="id_audio-url">Restart</button>
+        <h2>Remote Using &lt;audio&gt; Tag (direct)</h2>
+        <audio id="id_audio-url" controls="controls" preload="auto" >
+            <source src="http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3" />
+<!--            <source src="http://traffic.libsyn.com/ignwii/Nintendo_Voice_Chat__Show_and_Tell_With_Our_Favorite_Nintendo_Treasures.mp3" />-->
+        </audio>
+    </div>
+
+<!-- console.log() messages go here -->
+    <div>&nbsp;</div>
+    <div class="align-center">
+        <textarea id="id_textArea" class="align-left" readonly="readonly" wrap="off"></textarea>
+    </div>
 </body>
-
-
 </html>

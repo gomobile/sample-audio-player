@@ -1,5 +1,17 @@
 /*global console:false, window:false, moment:false, document:false */
 
+
+
+// helper to get root of local media file in Emulate and Debug tabs
+function getWebRoot() {
+    "use strict" ;
+    var path = window.location.href ;
+    path = path.substring( 0, path.lastIndexOf('/') ) ;
+    return path ;
+}
+
+
+
 var orgConsoleLog = console.log ;
 var orgTime = Date.now() ;
 console.log = function() {

@@ -5,8 +5,8 @@
             "projectTypeName": "com.intel.xdk.projecttype.jsapp",
             "src": "jsapp/sample-audio-player/sample.zip",
             "projectGuid": "00000000-0000-0000-0000-000000000000",
-            "lastModifiedDate": 1440101608406,
-            "creationDate": 1440101066940
+            "lastModifiedDate": 1464030544640,
+            "creationDate": 1463603818575
         },
         "XDK-app-designer": "false",
         "sourceDirectory": "www",
@@ -18,114 +18,34 @@
         "cordovaPluginsDirectory": "plugins",
         "cordovaPlugins": [
             {
-                "id": "cordova-plugin-statusbar",
-                "name": "StatusBar",
-                "version": "?",
-                "originType": "cordova.io",
-                "origin": "cordova-plugin-statusbar",
-                "gitref": "",
-                "paramvals": {},
-                "selectedState": "Included",
-                "dependsOn": [],
-                "topLevel": true,
-                "cordovaVersion": "?",
-                "permissions": {},
-                "description": "Cordova StatusBar Plugin",
-                "data": {},
-                "dependedBy": []
-            },
-            {
                 "id": "cordova-plugin-device",
                 "version": "?",
                 "selectedState": "Included",
-                "data": {},
-                "paramvals": {},
-                "dependsOn": [],
-                "dependedBy": [],
-                "originType": "cordova.io",
-                "origin": "cordova-plugin-device",
-                "permissions": {},
-                "topLevel": true,
-                "gitref": "",
-                "name": "Device",
-                "cordovaVersion": "?",
-                "description": "Cordova Device Plugin"
+                "originType": "cordova.io"
             },
             {
                 "id": "cordova-plugin-splashscreen",
                 "version": "?",
                 "selectedState": "Included",
-                "data": {},
-                "paramvals": {},
-                "dependsOn": [],
-                "dependedBy": [],
-                "originType": "cordova.io",
-                "origin": "cordova-plugin-splashscreen",
-                "permissions": {},
-                "topLevel": true,
-                "gitref": "",
-                "name": "Splashscreen",
-                "cordovaVersion": "?",
-                "description": "Cordova Splashscreen Plugin"
+                "originType": "cordova.io"
             },
             {
-                "id": "cordova-plugin-nativeaudio",
+                "id": "cordova-plugin-statusbar",
                 "version": "?",
                 "selectedState": "Included",
-                "data": {},
-                "paramvals": {},
-                "dependsOn": [],
-                "dependedBy": [],
-                "custom": "true",
-                "name": "Cordova Native Audio",
-                "origin": "https://github.com/floatinghotpot/cordova-plugin-nativeaudio.git",
-                "originType": "repo",
-                "sourceLocation": "",
-                "permissions": {},
-                "gitref": "",
-                "subdir": ".",
-                "topLevel": true,
-                "cordovaVersion": "?",
-                "description": "Cordova/PhoneGap Plugin for low latency Native Audio Playback, must have for HTML5 games",
-                "author": "Andrew Trice, Raymond Xie, SidneyS, etc."
-            },
-            {
-                "id": "cordova-plugin-file",
-                "version": "?",
-                "selectedState": "Included",
-                "data": {},
-                "paramvals": {},
-                "dependsOn": [],
-                "dependedBy": [
-                    "cordova-plugin-media"
-                ],
-                "originType": "cordova.io",
-                "origin": "cordova-plugin-file",
-                "permissions": {},
-                "topLevel": true,
-                "gitref": "",
-                "name": "File",
-                "cordovaVersion": "?",
-                "description": "Cordova File Plugin"
+                "originType": "cordova.io"
             },
             {
                 "id": "cordova-plugin-media",
                 "version": "?",
                 "selectedState": "Included",
-                "data": {},
-                "paramvals": {},
-                "dependsOn": [
-                    "cordova-plugin-file"
-                ],
-                "dependedBy": [],
-                "originType": "cordova.io",
-                "origin": "cordova-plugin-media",
-                "permissions": {},
-                "topLevel": true,
-                "gitref": "",
-                "name": "Media",
-                "cordovaVersion": "?",
-                "description": "Cordova Media Plugin"
+                "originType": "cordova.io"
+            },
+            {
+                "id": "cordova-plugin-nativeaudio",
+                "version": "?",
+                "selectedState": "Included",
+                "originType": "cordova.io"
             }
         ],
         "buildConfigurations": {
@@ -136,7 +56,8 @@
                 "preferences_": {
                     "android-minSdkVersion": "14",
                     "android-targetSdkVersion": "21",
-                    "android-installLocation": "auto"
+                    "android-installLocation": "auto",
+                    "android-signed": true
                 },
                 "isActive_": true,
                 "appName_": "Audio-Player-App",
@@ -144,10 +65,9 @@
                 "appAccess_": {
                     "mode": "whitelist",
                     "network": [
-                        "http://audio.ibeat.org/*",
-                        "http://traffic.libsyn.com/*",
-                        "http://debug-software.intel.com/*",
-                        "https://debug-software.intel.com/*"
+                        "http://debug-software.intel.com",
+                        "http://*.ibeat.org",
+                        "http://*.libsyn.com"
                     ],
                     "intents": [],
                     "navigation": []
@@ -159,7 +79,7 @@
                 "cordovaCLIVersion_": "?",
                 "crosswalkVersion_": "?",
                 "appVersion_": "0.0.1",
-                "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection.",
+                "appDescription_": "Audio Player Sample App",
                 "appAuthor_": "Intel XDK",
                 "appVersionCode_": "1"
             },
@@ -168,7 +88,7 @@
                 "runtime_": "Cordova 3.x",
                 "name_": "iOS",
                 "preferences_": {
-                    "ios-target": "8.0",
+                    "deployment-target": "8.0",
                     "ios-configuration": "adhoc"
                 },
                 "isActive_": true,
@@ -177,13 +97,15 @@
                 "appAccess_": {
                     "mode": "legacy",
                     "network": [
-                        "http://audio.ibeat.org/*",
-                        "http://traffic.libsyn.com/*",
-                        "http://debug-software.intel.com/*",
-                        "https://debug-software.intel.com/*"
+                        "http://debug-software.intel.com",
+                        "http://*.ibeat.org",
+                        "http://*.libsyn.com"
                     ],
                     "intents": [],
-                    "navigation": []
+                    "navigation": [
+                        "*"
+                    ],
+                    "properties": {}
                 },
                 "icons_": [],
                 "splashes_": [],
@@ -194,7 +116,7 @@
                 "crosswalkVersion_": "?",
                 "appVersion_": "0.0.1",
                 "appAuthor_": "Intel XDK",
-                "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection."
+                "appDescription_": "Audio Player Sample App"
             },
             "Windows8": {
                 "platform_": "windows8",
@@ -210,10 +132,9 @@
                 "appAccess_": {
                     "mode": "legacy",
                     "network": [
-                        "http://audio.ibeat.org/*",
-                        "http://traffic.libsyn.com/*",
-                        "http://debug-software.intel.com/*",
-                        "https://debug-software.intel.com/*"
+                        "http://debug-software.intel.com",
+                        "http://*.ibeat.org",
+                        "http://*.libsyn.com"
                     ],
                     "intents": [],
                     "navigation": []
@@ -226,7 +147,7 @@
                 "crosswalkVersion_": "?",
                 "appVersion_": "0.0.0.1",
                 "appAuthor_": "Intel XDK",
-                "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection."
+                "appDescription_": "Audio Player Sample App"
             },
             "WebApp": {
                 "platform_": "webapp",
@@ -235,15 +156,10 @@
                 "preferences_": {},
                 "isActive_": false,
                 "appName_": "Audio-Player-App",
-                "appID_": "not.yet.specified",
+                "appID_": "xdk.intel.demo.audioplayer",
                 "appAccess_": {
                     "mode": "legacy",
-                    "network": [
-                        "http://audio.ibeat.org/*",
-                        "http://traffic.libsyn.com/*",
-                        "http://debug-software.intel.com/*",
-                        "https://debug-software.intel.com/*"
-                    ],
+                    "network": [],
                     "intents": [],
                     "navigation": []
                 },
@@ -261,15 +177,10 @@
                 "preferences_": {},
                 "isActive_": false,
                 "appName_": "Audio-Player-App",
-                "appID_": "not.yet.specified",
+                "appID_": "xdk.intel.demo.audioplayer",
                 "appAccess_": {
                     "mode": "legacy",
-                    "network": [
-                        "http://audio.ibeat.org/*",
-                        "http://traffic.libsyn.com/*",
-                        "http://debug-software.intel.com/*",
-                        "https://debug-software.intel.com/*"
-                    ],
+                    "network": [],
                     "intents": [],
                     "navigation": []
                 },
@@ -279,85 +190,6 @@
                 "excludedLibraries_": "",
                 "appAuthor_": "Intel XDK",
                 "appVersion_": "0.0.1"
-            },
-            "Firefox": {
-                "platform_": "firefoxos",
-                "runtime_": "W3C on Firefox OS",
-                "name_": "Firefox",
-                "preferences_": {},
-                "isActive_": false,
-                "appName_": "Audio-Player-App",
-                "appID_": "not.yet.specified",
-                "appAccess_": {
-                    "mode": "legacy",
-                    "network": [
-                        "http://audio.ibeat.org/*",
-                        "http://traffic.libsyn.com/*",
-                        "http://debug-software.intel.com/*",
-                        "https://debug-software.intel.com/*"
-                    ],
-                    "intents": [],
-                    "navigation": []
-                },
-                "icons_": [],
-                "splashes_": [],
-                "addlPermissions_": "",
-                "excludedLibraries_": "",
-                "appAuthor_": "Intel XDK",
-                "appVersion_": "0.0.1"
-            },
-            "Facebook": {
-                "platform_": "facebook",
-                "runtime_": "W3C on Facebook",
-                "name_": "Facebook",
-                "preferences_": {},
-                "isActive_": false,
-                "appName_": "Audio-Player-App",
-                "appID_": "not.yet.specified",
-                "appAccess_": {
-                    "mode": "legacy",
-                    "network": [
-                        "http://audio.ibeat.org/*",
-                        "http://traffic.libsyn.com/*",
-                        "http://debug-software.intel.com/*",
-                        "https://debug-software.intel.com/*"
-                    ],
-                    "intents": [],
-                    "navigation": []
-                },
-                "icons_": [],
-                "splashes_": [],
-                "addlPermissions_": "",
-                "excludedLibraries_": "",
-                "appAuthor_": "Intel XDK",
-                "appVersion_": "0.0.1"
-            },
-            "WP81": {
-                "platform_": "wp81",
-                "runtime_": "Cordova 3.x",
-                "name_": "WP81",
-                "preferences_": {},
-                "isActive_": true,
-                "appName_": "Audio-Player-App",
-                "appID_": "not.yet.specified",
-                "appAccess_": {
-                    "mode": "legacy",
-                    "network": [
-                        "http://audio.ibeat.org/*",
-                        "http://traffic.libsyn.com/*",
-                        "http://debug-software.intel.com/*",
-                        "https://debug-software.intel.com/*"
-                    ],
-                    "intents": [],
-                    "navigation": []
-                },
-                "icons_": [],
-                "splashes_": [],
-                "addlPermissions_": "",
-                "excludedLibraries_": "",
-                "appAuthor_": "Intel XDK",
-                "appVersion_": "0.0.0.1",
-                "cordovaCLIVersion_": "?"
             }
         },
         "gameAssetDirectory": "asset",

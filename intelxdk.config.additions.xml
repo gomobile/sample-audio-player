@@ -1,36 +1,180 @@
-<!-- Change the debuggable preference to true to build a remote CDT debuggable app for -->
-<!-- Crosswalk apps on Android 4.0+ devices and Cordova apps on Android 4.4+ devices. -->
-<preference name="debuggable" value="false" />
-<!-- IMPORTANT: set the debuggable preference to false before you build for the store! -->
+<!-- Many Cordova config.xml preferences can be added thru this file, see: -->
+<!-- http://cordova.apache.org/docs/en/latest/config_ref/index.html -->
+<!-- https://cordova.apache.org/docs/en/5.4.0/config_ref/index.html#link-3 -->
+<!-- https://cordova.apache.org/docs/en/5.4.0/guide/platforms/ios/config.html -->
+<!-- https://cordova.apache.org/docs/en/5.4.0/guide/platforms/android/config.html -->
+<!-- https://cordova.apache.org/docs/en/5.4.0/guide/platforms/win8/index.html -->
 
-<!-- 'value' = number of milliseconds to display the splash screen in a Cordova build. -->
-<!-- This preference only affects Cordova builds for Crosswalk and Android. -->
-<!-- <preference name="SplashScreenDelay" value="2000" /> -->
+<!-- Set the debuggable preference to true to build a remote CDT debuggable Android app. -->
+<!-- Crosswalk apps on Android 4.0+ devices and Cordova apps on Android 4.4+ devices. -->
+<!-- Set the debuggable preference to false before you build for the store. -->
+<preference name="debuggable" value="true" />
+
+<!-- Set the Crosswalk embedded library to something other than those listed in the UI -->
+<!-- https://github.com/crosswalk-project/crosswalk-website/wiki/Release-dates -->
+<!-- https://download.01.org/crosswalk/releases/crosswalk/android/maven2/org/xwalk/xwalk_core_library/ -->
+<!-- https://download.01.org/crosswalk/releases/crosswalk/android/maven2/org/xwalk/xwalk_core_library_beta/ -->
+<!-- https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview#configure -->
+<!--<preference name="xwalkVersion" value="18+"/>-->
+<!--<preference name="xwalkVersion" value="14.43.343.24" />-->
+<!--<preference name="xwalkVersion" value="org.xwalk:xwalk_core_library_beta:19+" />-->
+
+<!-- Force a Windows Phone 8.0 (XAP) build when choosing Windows Phone 8.1 build option -->
+<!--<preference name="windows-target-version" value="8.0"/>-->
+
+<!-- use this feature to add command-lines to be used by Crosswalk builds at runtime -->
+<!-- see http://peter.sh/experiments/chromium-command-line-switches/ for complete list -->
+<!-- ignore gpu blacklist for larger collection of gpu accelerated devices -->
+<intelxdk:crosswalk xwalk-command-line="--ignore-gpu-blacklist" />
+
+<!-- Also worth trying for performance issues in Crosswalk: -->
+<!-- enable-gpu-rasterization: respects blacklist -->
+<!-- force-gpu-rasterization: ignores gpu blacklist -->
+<!-- disable-gpu-rasterization: for comparing to gpu-enabled -->
+<!-- Don't forget to prepend the above options with a double-dash when using! -->
+
+<!-- Because XML parsers deal with double-dashes as a comment indicator: -->
+<!-- * you must remove the space between option dashes "- -" to uncomment an option -->
+<!-- * you must add a space between the option dashes "- -" to comment out an option -->
+<!-- For example: -->
+<!--<intelxdk:crosswalk xwalk-command-line="- -disable-pull-to-refresh-effect" />-->
+<!-- becomes -->
+<intelxdk:crosswalk xwalk-command-line="--disable-pull-to-refresh-effect" />
+<!--<intelxdk:crosswalk xwalk-command-line="- -show-fps-counter" />-->
+
+<!-- Configure Crosswalk-Android "SurfaceView" or "TextureView" option. -->
+<!-- https://github.com/crosswalk-project/crosswalk-website/wiki/Android-SurfaceView-vs-TextureView -->
+<!-- https://crosswalk-project.org/jira/browse/XWALK-2233?focusedCommentId=37250&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-37250 -->
+<!-- default is SurfaceView if >= CW15 and TextureView if <= CW14 -->
+<!-- SurfaceView is preferred, TextureView should only be used in special cases. -->
+<!-- Enable TextureView by setting CrosswalkAnimatable to true. -->
+<preference name="CrosswalkAnimatable" value="false" />
+
+<platform name="android">
+    <!-- following requires the splash screen plugin -->
+    <!-- see https://github.com/apache/cordova-plugin-splashscreen for details -->
+    <preference name="SplashScreen" value="screen" />
+    <preference name="AutoHideSplashScreen" value="false" />
+    <!-- <preference name="SplashScreenDelay" value="30000" /> -->
+    <preference name="FadeSplashScreen" value="false"/>
+    <!-- <preference name="FadeSplashScreenDuration" value="3000"/> -->
+    <preference name="ShowSplashScreenSpinner" value="false"/>
+    <preference name="SplashMaintainAspectRatio" value="false" />
+    <preference name="SplashShowOnlyFirstTime" value="false" />
+
+    <!-- following requires the status bar plugin -->
+    <!-- see https://github.com/apache/cordova-plugin-statusbar for details -->
+    <!-- see http://devgirl.org/2014/07/31/phonegap-developers-guid -->
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#000000" />
+    <preference name="StatusBarStyle" value="lightcontent" />
+
+    <!-- to set Crosswalk or Android webview default background color -->
+    <!-- see http://developer.android.com/reference/android/graphics/Color.html -->
+    <!-- use all zeroes to get rid of annoying white flash on some devices -->
+    <preference name="BackgroundColor" value="0x00000000" />
+
+    <!-- http://cordova.apache.org/docs/en/latest/config_ref/index.html#preference -->
+    <!-- http://cordova.apache.org/docs/en/5.4.0/guide/platforms/android/config.html -->
+    <!-- add these preferences with default values for security reasons
+     see http://blog.trendmicro.com/trendlabs-security-intelligence/trend-micro-discovers-apache-vulnerability-that-allows-one-click-modification-of-android-apps/ -->
+    <preference name="AndroidLaunchMode" value="singleTop" />
+    <preference name="AppendUserAgent" value="" />
+    <preference name="DefaultVolumeStream" value="media" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="ErrorUrl" value="" />
+    <preference name="InAppBrowserStorageEnabled" value="true" />
+    <preference name="KeepRunning" value="true" />
+    <preference name="LoadUrlTimeoutValue" value="20000" />
+    <preference name="LoadingDialog" value="" />
+    <preference name="LoadingPageDialog" value="" />
+    <preference name="LogLevel" value="ERROR" />
+    <preference name="OverrideUserAgent" value="" />
+    <preference name="ShowTitle" value="false" />
+</platform>
 
 <platform name="ios">
-    <!-- below requires the splash screen plugin -->
-    <!-- docs: https://github.com/apache/cordova-plugin-splashscreen -->
+    <!-- following requires the splash screen plugin -->
+    <!-- see https://github.com/apache/cordova-plugin-splashscreen for details -->
     <preference name="AutoHideSplashScreen" value="true" />
+    <!-- <preference name="FadeSplashScreenDuration" value="3000"/> -->
     <preference name="FadeSplashScreen" value="false"/>
-    <preference name="FadeSplashScreenDuration" value="2"/>
+    <!-- <preference name="FadeSplashScreenDuration" value="3000"/> -->
     <preference name="ShowSplashScreenSpinner" value="false"/>
 
-    <!-- below requires the status bar plugin -->
-    <!-- docs: https://github.com/apache/cordova-plugin-statusbar -->
+    <!-- following requires the status bar plugin -->
+    <!-- see https://github.com/apache/cordova-plugin-statusbar for details -->
+    <!-- see http://devgirl.org/2014/07/31/phonegap-developers-guid -->
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#000000" />
+    <preference name="StatusBarStyle" value="lightcontent" />
+
+    <!-- to select between building for iPhone, iPad or both -->
+    <!-- https://cordova.apache.org/docs/en/5.4.0/guide/platforms/ios/config.html -->
+    <!-- valid values are handset, tablet and universal -->
+    <preference name="target-device" value="universal" />
+
+    <!-- http://cordova.apache.org/docs/en/latest/config_ref/index.html#preference -->
+    <!-- http://cordova.apache.org/docs/en/5.4.0/guide/platforms/ios/config.html -->
+    <preference name="AllowInlineMediaPlayback" value="false" />
+    <preference name="AppendUserAgent" value="" />
+    <preference name="BackgroundColor" value="0x00000000" />
+    <preference name="BackupWebStorage" value="cloud" />
+    <preference name="CDVSystemSchemesOverride" value="maps,tel,telprompt" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="EnableViewportScale" value="false" />
+    <preference name="ErrorUrl" value="" />
+    <preference name="GapBetweenPages" value="0" />
+    <preference name="KeyboardDisplayRequiresUserAction" value="true" />
+    <preference name="MediaPlaybackAllowsAirPlay" value="true" />
+    <preference name="MediaPlaybackRequiresUserAction" value="false" />
+    <preference name="PageLength" value="0" />
+    <preference name="PaginationBreakingMode" value="page" />
+    <preference name="PaginationMode" value="unpaginated" />
+    <preference name="Suppresses3DTouchGesture" value="false" />
+    <preference name="SuppressesIncrementalRendering" value="false" />
+    <preference name="SuppressesLongPressGesture" value="false" />
+    <preference name="TopActivityIndicator" value="gray" />
+    <preference name="UIWebViewDecelerationSpeed" value="normal" />
+</platform>
+
+<platform name="wp8">
+    <!-- following requires the splash screen plugin -->
+    <!-- see https://github.com/apache/cordova-plugin-splashscreen for details -->
+    <preference name="SplashScreen" value="SplashScreenPhone" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="SplashMaintainAspectRatio" value="false" />
+
+    <!-- following requires the status bar plugin -->
+    <!-- see https://github.com/apache/cordova-plugin-statusbar for details -->
     <!-- see http://devgirl.org/2014/07/31/phonegap-developers-guid -->
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#000000" />
     <preference name="StatusBarStyle" value="lightcontent" />
 </platform>
 
-<platform name="android">
-    <!-- below requires the splash screen plugin -->
-    <!-- docs: https://github.com/apache/cordova-plugin-splashscreen -->
+<platform name="windows">
+    <!-- following requires the splash screen plugin -->
+    <!-- see https://github.com/apache/cordova-plugin-splashscreen for details -->
+    <preference name="SplashScreen" value="SplashScreen" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashScreenDelay" value="3000" />
     <preference name="SplashMaintainAspectRatio" value="false" />
-</platform>
 
-<!-- use this feature to add command-lines to be used by Crosswalk builds on device -->
-<!-- see http://peter.sh/experiments/chromium-command-line-switches/ for complete list -->
-<intelxdk:crosswalk xwalk-command-line="--disable-pull-to-refresh-effect" />
-<!-- ignore gpu blacklist for larger collection of gpu accelerated devices -->
-<intelxdk:crosswalk xwalk-command-line="--ignore-gpu-blacklist" />
+    <!-- following requires the status bar plugin -->
+    <!-- see https://github.com/apache/cordova-plugin-statusbar for details -->
+    <!-- see http://devgirl.org/2014/07/31/phonegap-developers-guid -->
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#000000" />
+    <preference name="StatusBarStyle" value="lightcontent" />
+
+    <!-- http://cordova.apache.org/docs/en/latest/config_ref/index.html#preference -->
+    <!-- https://cordova.apache.org/docs/en/5.4.0/guide/platforms/win8/index.html -->
+    <preference name="BackgroundColor" value="0x00000000" />
+    <preference name="SplashScreenBackgroundColor" value="#464646" />
+    <!-- <preference name="WindowsDefaultUriPrefix" value="ms-appx-web://" /> -->
+    <!-- <preference name="WindowsStoreDisplayName" value="Windows" /> -->
+    <!-- <preference name="WindowsStoreIdentityName" value="Windows" /> -->
+    <preference name="WindowsToastCapable" value="false" />
+</platform>
