@@ -2,6 +2,8 @@
  * Please see the included README.md file for license terms and conditions.
  */
 
+/*csslint order-alphabetical:false */
+
 body {
     background-color: #cccccc;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#b7b7b7), to(#cccccc));
@@ -27,7 +29,7 @@ div {
     font: normal 14px/120% "Intel Clear W", Arial, sans-serif;
     color: rgb(51, 51, 51);
     text-align: center;
-    text-shadow: 0px 1px 0px rgb(238, 238, 238);
+    text-shadow: 0 1px 0 rgb(238, 238, 238);
 }
 
 
@@ -69,7 +71,7 @@ button {
     font: normal 14px/120% "Intel Clear W", Arial, sans-serif;
     color: rgb(84, 84, 84);
     text-align: center;
-    text-shadow: 0px 1px 0px rgb(221, 221, 221);
+    text-shadow: 0 1px 0 rgb(221, 221, 221);
 /*    margin-bottom: 15px;*/
 }
 
@@ -84,7 +86,7 @@ button:focus {
     font: normal 14px/120% "Intel Clear W", Arial, sans-serif;
     color: rgb(238,238,238);
     text-align: center;
-    text-shadow: 0px 1px 0px rgb(85,85,85);
+    text-shadow: 0 1px 0 rgb(85,85,85);
 /*    margin-bottom: 15px;*/
     outline:none;
 }
@@ -108,14 +110,14 @@ h1 {
     font: normal 38px/120% "Intel Clear W", Arial, sans-serif;
     color: rgb(51, 51, 51);
     text-align: center;
-    text-shadow: 0px 1px 0px rgb(238, 238, 238);
+    text-shadow: 0 1px 0 rgb(238, 238, 238);
 }
 
 h2 {
     font: normal 16px/120% "Intel Clear W", Arial, sans-serif;
     color: rgb(51, 51, 51);
     text-align: center;
-    text-shadow: 0px 1px 0px rgb(238, 238, 238);
+    text-shadow: 0 1px 0 rgb(238, 238, 238);
 }
 
 audio {
