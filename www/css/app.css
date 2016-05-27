@@ -2,7 +2,7 @@
  * Please see the included README.md file for license terms and conditions.
  */
 
-/*csslint order-alphabetical:false */
+/*csslint order-alphabetical:false, box-model:false */
 
 body {
     background-color: #cccccc;
